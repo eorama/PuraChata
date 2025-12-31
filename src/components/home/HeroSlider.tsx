@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const base = import.meta.env.BASE_URL;
+
 const images = [
-    '/images/hero-slider/hero-slide-1.jpg',
-    '/images/hero-slider/hero-slide-2.jpg',
-    '/images/hero-slider/hero-slide-3.jpg',
-    '/images/hero-slider/hero-slide-4.jpg',
+    `${base}images/hero-slider/hero-slide-1.jpg`,
+    `${base}images/hero-slider/hero-slide-2.jpg`,
+    `${base}images/hero-slider/hero-slide-3.jpg`,
+    `${base}images/hero-slider/hero-slide-4.jpg`,
 ];
 
 export const HeroSlider = () => {

@@ -7,6 +7,7 @@ import { FiArrowRight } from "react-icons/fi";
 // Assuming we will need to refactor it or use it as a client island.
 // For now, let's use it as a client island.
 import { HeroSlider } from "@/components/home/HeroSlider";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="PuraChata Ecolodge | Conexión Profunda en la Amazonía">
@@ -107,7 +108,7 @@ import { HeroSlider } from "@/components/home/HeroSlider";
                     class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
                 >
                     <img
-                        src="/images/home-bungalow-sunset.jpg"
+                        src={base + "images/home-bungalow-sunset.jpg"}
                         alt="Bungalows Pura Chata Ecolodge"
                         class="object-cover w-full h-full"
                     />
@@ -192,7 +193,7 @@ import { HeroSlider } from "@/components/home/HeroSlider";
                     class="order-1 md:order-2 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
                 >
                     <img
-                        src="/images/home-agroecology.jpg"
+                        src={base + "images/home-agroecology.jpg"}
                         alt="Naturaleza en Ecolodge Amazonía Peruana"
                         class="object-cover w-full h-full"
                     />
@@ -222,7 +223,7 @@ import { HeroSlider } from "@/components/home/HeroSlider";
                 >
                     <div class="relative h-64 overflow-hidden">
                         <img
-                            src="/images/alojamiento-consciente-v2.jpg"
+                            src={base + "images/alojamiento-consciente-v2.jpg"}
                             alt="Alojamiento Ecolodge Amazonía Peruana"
                             class="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full"
                         />
@@ -252,9 +253,9 @@ import { HeroSlider } from "@/components/home/HeroSlider";
                 >
                     <div class="relative h-64 overflow-hidden">
                         <img
-                            src="/images/tours-y-aventura-v2.jpg"
-                            alt="Tours Delfines Amazonía"
-                            class="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full"
+                            src={base + "images/experiencia-allpahuayo.jpg"}
+                            alt="Bosques de Arena Blanca"
+                            class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
                         />
                     </div>
                     <div class="p-8">
@@ -282,9 +283,9 @@ import { HeroSlider } from "@/components/home/HeroSlider";
                 >
                     <div class="relative h-64 overflow-hidden">
                         <img
-                            src="/images/voluntariado-v2.jpg"
-                            alt="Voluntariado Selva Perú"
-                            class="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full"
+                            src={base + "images/card-dolphin.png"}
+                            alt="Delfines Rosados en Yarapa"
+                            class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
                         />
                     </div>
                     <div class="p-8">

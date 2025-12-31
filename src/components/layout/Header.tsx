@@ -35,14 +35,16 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
         };
     }, []);
 
+    const base = import.meta.env.BASE_URL;
+
     const navLinks = [
-        { name: 'Inicio', href: '/' },
-        { name: 'Nosotros', href: '/nosotros' },
-        { name: 'Alojamiento', href: '/alojamiento' },
-        { name: 'Experiencias', href: '/experiencias' },
-        { name: 'Impacto Social', href: '/impacto-social' },
-        { name: 'Voluntariado', href: '/voluntariado' },
-        { name: 'Contacto', href: '/contacto' },
+        { name: 'Inicio', href: base },
+        { name: 'Nosotros', href: `${base}nosotros` },
+        { name: 'Alojamiento', href: `${base}alojamiento` },
+        { name: 'Experiencias', href: `${base}experiencias` },
+        { name: 'Impacto Social', href: `${base}impacto-social` },
+        { name: 'Voluntariado', href: `${base}voluntariado` },
+        { name: 'Contacto', href: `${base}contacto` },
     ];
 
     const toggleLanguage = (lang: 'es' | 'en') => {
@@ -59,10 +61,10 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2">
+                <a href={base} className="flex items-center gap-2">
                     <div className="relative h-20 w-56">
                         <img
-                            src="/images/logo-full.png"
+                            src={`${base}images/logo-full.png`}
                             alt="PuraChata Logo"
                             className="object-contain object-left w-full h-full"
                         />
