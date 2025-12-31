@@ -3,18 +3,21 @@ import type { NextConfig } from "next";
 // Define the repository name for GitHub Pages
 const repoName = '/PuraChata';
 
+// Robustly detect if we are building for GitHub Pages
+// We set GH_PAGES_BUILD='true' in the workflow
+const isGitHubPages = process.env.GH_PAGES_BUILD === 'true';
+
 const nextConfig: NextConfig = {
   output: 'export',
-  // Hardcoded basePath to ensure it works on GitHub Pages. 
-  // Localhost will always require /PuraChata prefix.
-  basePath: repoName,
+  // Only apply basePath on GitHub Pages
+  basePath: isGitHubPages ? repoName : '',
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
   env: {
-    // Expose basePath to the client side
-    NEXT_PUBLIC_BASE_PATH: repoName,
+    // Expose correct basePath to client
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? repoName : '',
   },
 };
 

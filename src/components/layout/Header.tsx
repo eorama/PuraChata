@@ -133,18 +133,18 @@ export const Header = () => {
                                     </div>
                                     <span>Español</span>
                                 </button>
-                                <button
+                                <Link
+                                    href="/english-notice"
                                     className={cn(
-                                        "flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm w-full text-left transition-colors",
-                                        language === 'en' ? "bg-gray-50 text-[var(--color-primary)] font-medium" : "text-gray-700"
+                                        "flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm w-full text-left transition-colors text-gray-700"
                                     )}
-                                    onClick={() => toggleLanguage('en')}
+                                    onClick={() => setIsLangOpen(false)}
                                 >
                                     <div className="w-6 h-4 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0">
                                         <FlagUS className="w-full h-full" />
                                     </div>
                                     <span>English</span>
-                                </button>
+                                </Link>
                             </div>
                         )}
                     </div>
@@ -196,18 +196,18 @@ export const Header = () => {
                                 </div>
                                 <span>Español</span>
                             </button>
-                            <button
-                                onClick={() => { setLanguage('en'); setIsOpen(false); }}
+                            <Link
+                                href="/english-notice"
+                                onClick={() => setIsOpen(false)}
                                 className={cn(
-                                    "flex items-center justify-center gap-2 px-3 py-2 rounded-lg border text-sm transition-all",
-                                    language === 'en' ? "border-[var(--color-primary)] bg-green-50 text-[var(--color-primary)] font-medium ring-1 ring-[var(--color-primary)]" : "border-gray-200 hover:border-gray-300"
+                                    "flex items-center justify-center gap-2 px-3 py-2 rounded-lg border text-sm transition-all border-gray-200 hover:border-gray-300"
                                 )}
                             >
                                 <div className="w-5 h-3.5 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0">
                                     <FlagUS className="w-full h-full" />
                                 </div>
                                 <span>English</span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
