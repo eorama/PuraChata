@@ -22,7 +22,11 @@ const currentPath = Astro.url.pathname;
 			content="Vive una experiencia auténtica en plena selva, rodeada de naturaleza y cultura local. PuraChata Ecolodge, Iquitos, Perú."
 		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href={import.meta.env.BASE_URL + "favicon.ico"}
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<meta name="robots" content="noindex, nofollow" />
 		<title>{title}</title>

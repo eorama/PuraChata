@@ -11,7 +11,7 @@ export const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <div className="relative h-16 w-48">
                         <img
-                            src="/images/logo-full.png"
+                            src={`${import.meta.env.BASE_URL}images/logo-full.png`}
                             alt="PuraChata Logo"
                             className="object-contain object-left w-full h-full"
                         />
