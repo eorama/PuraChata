@@ -1,0 +1,222 @@
+'use client';
+
+import Image from "next/image";
+import { Section } from "@/components/ui/Section";
+import { FiHeart, FiTarget, FiCheckCircle, FiGlobe } from "react-icons/fi";
+
+export default function ImpactoSocialPage() {
+    return (
+        <div className="pt-24">
+
+            {/* Header */}
+            <Section className="pb-8">
+                <div className="text-center max-w-3xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl mb-6 font-serif text-[var(--color-primary)]">Impacto Social</h1>
+                    <p className="text-xl text-gray-600">
+                        Nuestra huella va más allá de la hospitalidad. Trabajamos con el corazón para transformar realidades en la Amazonía.
+                    </p>
+                </div>
+            </Section>
+
+            {/* Main Manifesto Section */}
+            <Section container className="!pt-0">
+                <div className="space-y-12">
+                    {/* Mission */}
+                    <div className="text-center">
+                        <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+                            "En Pura Chata Eco-Lodge estamos enfocados en ofrecer un excelente servicio de alojamiento y experiencias auténticas
+                            que permitan conectar a nuestros huéspedes con la naturaleza y la cultura local sin renunciar al confort,
+                            mientras contribuimos con el desarrollo sostenible a través de buenas prácticas ambientales."
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12">
+                        {/* Community Column */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full">
+                            <div className="mb-6 flex items-center gap-3">
+                                <span className="p-3 bg-blue-100 text-blue-600 rounded-full text-2xl"><FiGlobe /></span>
+                                <h2 className="text-2xl font-serif text-[var(--color-primary)]">Comunidad y Educación</h2>
+                            </div>
+                            <div className="text-gray-700 text-justify space-y-4">
+                                <p>
+                                    En Pura Chata, creemos que nuestro éxito está ligado al bienestar de la comunidad local. Por eso, nos esforzamos por crear oportunidades que sean de beneficio para ellos. Dentro de los cuales podemos mencionar la generación de empleo y el aporte a su economía a través del consumo de productos locales.
+                                </p>
+                                <p>
+                                    Como parte de nuestro compromiso con el medio ambiente realizamos charlas de educación ambiental con estudiantes de colegios aledaños. Tenemos 2 proyectos donde trabajamos con alumnos del 4º, 5º y 6º grado de primaria del colegio <strong>“Fe y alegría km 42”</strong>:
+                                </p>
+                                <ul className="pl-4 space-y-2 list-disc marker:text-[var(--color-primary)]">
+                                    <li><strong>“Recolección de Residuos Sólidos y Reciclaje”</strong>: Por un mundo más limpio.</li>
+                                    <li><strong>“Proyecto de Reforestación Siembra tu árbol”</strong>: Donde empleamos especies forestales y frutales nativas.</li>
+                                </ul>
+                                <p>
+                                    Con estos proyectos pretendemos educar y concienciar a los niños sobre la importancia del cuidado del medio ambiente y la protección de los recursos naturales a través del desarrollo de habilidades y valores.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Environment Column */}
+                        <div className="bg-[var(--color-secondary)]/20 p-8 rounded-2xl border border-[var(--color-secondary)] h-full">
+                            <div className="mb-6 flex items-center gap-3">
+                                <span className="p-3 bg-green-100 text-green-600 rounded-full text-2xl"><span className="text-2xl">🌱</span></span>
+                                <h2 className="text-2xl font-serif text-[var(--color-primary)]">Sostenibilidad Operativa</h2>
+                            </div>
+                            <div className="text-gray-700 text-justify space-y-4">
+                                <p>
+                                    Nuestro compromiso con el medio ambiente no solo es con la comunidad local si no, también con nuestros huéspedes. Nos esforzamos en brindar servicios que van de la mano con la sostenibilidad:
+                                </p>
+                                <ul className="space-y-3">
+                                    <li className="flex gap-3">
+                                        <FiCheckCircle className="mt-1 flex-shrink-0 text-green-600" />
+                                        <span>Contamos con sembríos de especies indispensables en la cocina amazónica (sin usar químicos).</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <FiCheckCircle className="mt-1 flex-shrink-0 text-green-600" />
+                                        <span>Criamos peces que son alimentados con frutas y residuos orgánicos.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <FiCheckCircle className="mt-1 flex-shrink-0 text-green-600" />
+                                        <span>Criamos gallinas para abastecernos con huevos frescos y saludables.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <FiCheckCircle className="mt-1 flex-shrink-0 text-green-600" />
+                                        <span>Sistema de biodigestor para los residuos generados en las duchas.</span>
+                                    </li>
+                                </ul>
+                                <p className="font-medium pt-2 text-[var(--color-primary)]">
+                                    Así es como Pura Chata viene trabajando en la generación de impactos positivos en la sociedad y el medio ambiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            {/* Granito de Arena Section */}
+            <Section className="bg-[var(--color-background-soft)]" container>
+                <div className="flex flex-col lg:flex-row gap-12 items-center">
+                    <div className="lg:w-1/2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
+                        <Image
+                            src="/images/granito-de-arena.jpg"
+                            alt="Niños Amazonía Escuela"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+
+                    <div className="lg:w-1/2 space-y-6">
+                        <div className="flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase text-sm tracking-wider">
+                            <FiHeart className="text-xl" /> Campaña Solidaria
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-primary)]">Granito de Arena</h2>
+
+                        <div className="prose text-gray-700">
+                            <h3 className="text-lg font-bold text-[var(--color-primary)]">💖 ¿Cómo nació la iniciativa?</h3>
+                            <p>
+                                Todo comenzó con un viaje que marcó profundamente. Al recorrer la carretera Iquitos-Nauta, encontramos escuelas rurales
+                                sin el apoyo necesario. Pese a las carencias, las sonrisas y la motivación de los niños por aprender fueron impactantes.
+                                Así nació esta campaña: desde el corazón, con el deseo de sembrar esperanza.
+                            </p>
+                            <p>
+                                Desde España creamos un crowdfunding con apoyo de amigos y familiares para reunir fondos y poner nuestro
+                                “Granito de arena en la Amazonía Peruana”.
+                            </p>
+
+                            <h3 className="text-lg font-bold text-[var(--color-primary)] mt-6">🎯 Objetivo General</h3>
+                            <p>
+                                Contribuir al fortalecimiento del acceso a la educación en comunidades rurales de Iquitos, a través de la entrega
+                                de material escolar y el establecimiento de redes de apoyo solidario.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Objectives & Metas Grid */}
+                <div className="grid md:grid-cols-2 gap-8 mt-16">
+                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 className="flex items-center gap-3 text-xl font-bold text-[var(--color-primary)] mb-6">
+                            <FiTarget /> Objetivos Específicos
+                        </h3>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1"><FiCheckCircle /></span>
+                                Entregar kits escolares básicos a estudiantes de colegios rurales.
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1"><FiCheckCircle /></span>
+                                Sensibilizar a la comunidad internacional sobre las condiciones educativas.
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1"><FiCheckCircle /></span>
+                                Fomentar valores solidarios y participación ciudadana.
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1"><FiCheckCircle /></span>
+                                Establecer vínculos duraderos con las escuelas beneficiadas.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 className="flex items-center gap-3 text-xl font-bold text-[var(--color-primary)] mb-6">
+                            <FiGlobe /> Metas Alcanzadas
+                        </h3>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1">✅</span>
+                                Campaña de crowdfunding realizada con éxito desde España.
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1">✅</span>
+                                Compra y entrega de material escolar (cuadernos, lápices, pinturas, juegos).
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1">✅</span>
+                                Visita directa para conocer necesidades reales.
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-700">
+                                <span className="text-green-500 mt-1">✅</span>
+                                Contacto establecido con directores y docentes locales.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </Section>
+
+            {/* Reforestation Section */}
+            <Section container>
+                <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
+                    <div className="lg:w-1/2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
+                        <Image
+                            src="/images/siembra-tu-arbol.jpg"
+                            alt="Siembra tu árbol Amazonía"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+
+                    <div className="lg:w-1/2 space-y-6">
+                        <div className="flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase text-sm tracking-wider">
+                            <span className="text-2xl">🌱</span> Medio Ambiente
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-primary)]">Siembra tu Árbol</h2>
+
+                        <div className="prose text-gray-700 leading-relaxed">
+                            <p>
+                                En Pura Chata, creemos que cada visitante puede dejar una huella positiva. Nuestro proyecto de reforestación
+                                invita a cada huésped a plantar un árbol nativo en nuestras 14 hectáreas de bosque.
+                            </p>
+                            <p>
+                                Trabajamos para recuperar áreas degradadas y crear corredores biológicos para la fauna local.
+                                Es un acto simbólico y concreto de amor por la Tierra que perdurará por generaciones.
+                            </p>
+                            <blockquote className="border-l-4 border-[var(--color-primary)] pl-4 italic text-lg my-6 bg-gray-50 p-4 rounded-r-lg">
+                                &quot;El que planta un árbol, planta una esperanza.&quot;
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+        </div>
+    );
+}
