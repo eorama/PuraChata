@@ -1,26 +1,25 @@
 import type { NextConfig } from "next";
 
-// Define the repository name for GitHub Pages
 const repoName = '/PuraChata';
 
-// Detect GitHub Actions environment
-const isGitHubActions = process.env.GITHUB_ACTIONS === 'true' || process.env.GITHUB_ACTIONS === '1';
-// Also keep our custom flag just in case
-const isCustomBuild = process.env.GH_PAGES_BUILD === 'true';
-
-const shouldUseBasePath = isGitHubActions || isCustomBuild;
+// Determine if we are running in production mode (build/export)
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // Only apply basePath on GitHub Pages
-  basePath: shouldUseBasePath ? repoName : '',
+  // Apply basePath only during production build (GitHub Actions), 
+  // keeping localhost root-relative for easy development.
+  basePath: isProd ? repoName : '',
+  // Explicitly set assetPrefix to match basePath as recommended
+  assetPrefix: isProd ? repoName : '',
   images: {
+    // REQUIRED for GitHub Pages (no server-side optimization)
     unoptimized: true,
   },
   trailingSlash: true,
   env: {
-    // Expose correct basePath to client
-    NEXT_PUBLIC_BASE_PATH: shouldUseBasePath ? repoName : '',
+    // Expose basePath to the client side for manual links/styles
+    NEXT_PUBLIC_BASE_PATH: isProd ? repoName : '',
   },
 };
 
