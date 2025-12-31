@@ -182,7 +182,13 @@ export default function AlojamientoPage() {
             {/* CTA BOOKING */}
             <Section container className="my-16">
                 <div className="bg-[var(--color-primary)] rounded-3xl p-12 md:p-20 text-center text-white shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/images/logo-icon-white.png')] bg-repeat space-x-12"></div>
+                    <div
+                        className="absolute top-0 left-0 w-full h-full opacity-10 bg-repeat space-x-12"
+                        style={{
+                            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logo-icon-white.png')`,
+                            backgroundSize: '100px' // Adjust size if needed to match previous look
+                        }}
+                    ></div>
                     <div className="relative z-10 max-w-3xl mx-auto space-y-8">
                         <h2 className="text-4xl md:text-5xl font-serif font-bold">
                             ¿Listo para vivir la magia de la selva?
