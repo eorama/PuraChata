@@ -1,13 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Button } from "@/components/ui/Button";
-import { Section } from "@/components/ui/Section";
+import Button from "@/components/ui/Button.astro";
+import Section from "@/components/ui/Section.astro";
 import { FiArrowRight } from "react-icons/fi";
 // HeroSlider is problematic if it uses Framer Motion without client:load.
 // Assuming we will need to refactor it or use it as a client island.
 // For now, let's use it as a client island.
 import { HeroSlider } from "@/components/home/HeroSlider";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + "/";
 ---
 
 <Layout title="PuraChata Ecolodge | Conexión Profunda en la Amazonía">

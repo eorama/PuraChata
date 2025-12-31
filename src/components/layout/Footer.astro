@@ -1,0 +1,95 @@
+---
+import { FiInstagram, FiFacebook } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+
+const base = import.meta.env.BASE_URL;
+// Ensure base ends with slash if it doesn't (though typically ImportMeta.env.BASE_URL respects base config)
+const safeBase = base.endsWith("/") ? base : base + "/";
+---
+
+<footer class="bg-[var(--color-secondary)] text-[var(--color-text-main)] py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Column 1: Brand */}
+        <div class="flex flex-col gap-4">
+            <div class="relative h-16 w-48">
+                <img
+                    src={safeBase + "images/logo-full.png"}
+                    alt="PuraChata Logo"
+                    class="object-contain object-left w-full h-full"
+                />
+            </div>
+            <p class="text-sm opacity-80 max-w-xs">
+                Conexión real, profunda y transformadora con la naturaleza en el
+                corazón de la Amazonía.
+            </p>
+            <span class="text-sm font-bold mt-2">
+                © {new Date().getFullYear()} PuraChata. Derechos reservados.
+            </span>
+        </div>
+
+        {/* Column 2: Quick Links */}
+        <div class="flex flex-col gap-2">
+            <h4
+                class="font-serif text-xl font-bold mb-2 text-[var(--color-primary)]"
+            >
+                Enlaces Rápidos
+            </h4>
+            <a
+                href="/nosotros"
+                class="hover:text-[var(--color-primary)] transition-colors"
+                >Nosotros</a
+            >
+            <a
+                href="/impacto-social"
+                class="hover:text-[var(--color-primary)] transition-colors"
+                >Impacto Social</a
+            >
+            <a
+                href="/politicas"
+                class="hover:text-[var(--color-primary)] transition-colors"
+                >Políticas</a
+            >
+            <a
+                href="/contacto"
+                class="hover:text-[var(--color-primary)] transition-colors"
+                >Contáctanos</a
+            >
+        </div>
+
+        {/* Column 3: Contact */}
+        <div class="flex flex-col gap-4">
+            <h4
+                class="font-serif text-xl font-bold mb-2 text-[var(--color-primary)]"
+            >
+                Contacto
+            </h4>
+            <p class="text-sm">
+                Carretera Iquitos - Nauta Km. 41.700<br />
+                Iquitos, Perú
+            </p>
+            <div class="flex gap-4 mt-2">
+                <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-2xl hover:text-[var(--color-primary)]"
+                    aria-label="Facebook"><FiFacebook /></a
+                >
+                <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-2xl hover:text-[var(--color-primary)]"
+                    aria-label="Instagram"><FiInstagram /></a
+                >
+                <a
+                    href="https://wa.me/51917057569"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-2xl hover:text-[var(--color-primary)]"
+                    aria-label="WhatsApp"><FaWhatsapp /></a
+                >
+            </div>
+        </div>
+    </div>
+</footer>

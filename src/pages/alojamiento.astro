@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import Section from "@/components/ui/Section.astro";
+import Button from "@/components/ui/Button.astro";
 import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
+const safeBase = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + "/";
 ---
 
 <Layout title="Alojamiento | PuraChata Ecolodge">
@@ -13,8 +16,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                 class="relative h-[60vh] min-h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl"
             >
                 <img
-                    src={import.meta.env.BASE_URL +
-                        "images/alojamiento-consciente-v2.jpg"}
+                    src={safeBase + "images/alojamiento-consciente-v2.jpg"}
                     alt="Alojamiento en Pura Chata Ecolodge"
                     class="object-cover w-full h-full"
                 />
@@ -77,8 +79,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                     class="order-2 lg:order-1 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
                 >
                     <img
-                        src={import.meta.env.BASE_URL +
-                            "images/home-bungalow-sunset.jpg"}
+                        src={safeBase + "images/home-bungalow-sunset.jpg"}
                         alt="Bungalows Privados Pura Chata"
                         class="object-cover w-full h-full"
                     />
@@ -165,8 +166,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                     class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
                 >
                     <img
-                        src={import.meta.env.BASE_URL +
-                            "images/alojamiento-consciente-v2.jpg"}
+                        src={safeBase + "images/alojamiento-consciente-v2.jpg"}
                         alt="Habitación Confort Pura Chata"
                         class="object-cover w-full h-full"
                     />
@@ -184,8 +184,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                     class="order-2 lg:order-1 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
                 >
                     <img
-                        src={import.meta.env.BASE_URL +
-                            "images/experiencia-estadia-swing.jpg"}
+                        src={safeBase + "images/experiencia-estadia-swing.jpg"}
                         alt="Exteriores y hamacas Pura Chata"
                         class="object-cover w-full h-full"
                     />
@@ -252,8 +251,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                     class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl bg-gray-200"
                 >
                     <img
-                        src={import.meta.env.BASE_URL +
-                            "images/restaurante-gastronomia.jpg"}
+                        src={safeBase + "images/restaurante-gastronomia.jpg"}
                         alt="Gastronomía Fresca y Local"
                         class="object-cover w-full h-full"
                     />
@@ -269,7 +267,7 @@ import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-10 bg-repeat space-x-12"
                     style={{
-                        backgroundImage: `url('${import.meta.env.BASE_URL}images/logo-icon-white.png')`,
+                        backgroundImage: `url('${safeBase}images/logo-icon-white.png')`,
                         backgroundSize: "100px",
                     }}
                 >

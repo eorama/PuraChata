@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiImage } from 'react-icons/fi';
-import { Section } from '@/components/ui/Section';
 
 // Placeholder slides since we don't have images yet
 const PLACEHOLDERS = [1, 2, 3, 4, 5];
@@ -20,7 +19,7 @@ export const GalleryCarousel = () => {
     };
 
     return (
-        <Section className="bg-[var(--color-background-soft)] py-20">
+        <section className="bg-[var(--color-background-soft)] py-20">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h3 className="text-3xl font-serif text-[var(--color-primary)]">Galería de Momentos</h3>
@@ -71,14 +70,14 @@ export const GalleryCarousel = () => {
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
                                 className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentIndex
-                                        ? 'bg-[var(--color-primary)] w-8'
-                                        : 'bg-white/60 hover:bg-white'
+                                    ? 'bg-[var(--color-primary)] w-8'
+                                    : 'bg-white/60 hover:bg-white'
                                     }`}
                             />
                         ))}
                     </div>
                 </div>
             </div>
-        </Section>
+        </section>
     );
 };

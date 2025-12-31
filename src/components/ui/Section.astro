@@ -1,0 +1,29 @@
+---
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+
+interface Props {
+    container?: boolean;
+    className?: string; // Add className to Props
+    // Allow other props
+    [key: string]: any;
+}
+
+const { className, container = true, ...props } = Astro.props;
+---
+
+<section class={cn("py-16 md:py-24", className)} {...props}>
+    {
+        container ? (
+            <div class="container mx-auto px-4 md:px-6">
+                <slot />
+            </div>
+        ) : (
+            <slot />
+        )
+    }
+</section>

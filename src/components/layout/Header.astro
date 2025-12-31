@@ -1,0 +1,220 @@
+---
+import { Button } from "@/components/ui/Button"; // Will verify this import works with .astro or needs .tsx
+// Actually Button should be imported from the new .astro file if possible, or support both.
+// Since I created Button.astro, I should import it.
+// Astro resolves exports.
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { FlagPE, FlagUS } from "@/components/ui/icons/Flags";
+
+const { currentPath = "" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+// Ensure base ends with slash
+const safeBase = base.endsWith("/") ? base : base + "/";
+
+const navLinks = [
+    { name: "Inicio", href: base }, // base usually results in root
+    { name: "Nosotros", href: `${safeBase}nosotros` },
+    { name: "Alojamiento", href: `${safeBase}alojamiento` },
+    { name: "Experiencias", href: `${safeBase}experiencias` },
+    { name: "Impacto Social", href: `${safeBase}impacto-social` },
+    { name: "Voluntariado", href: `${safeBase}voluntariado` },
+    { name: "Contacto", href: `${safeBase}contacto` },
+];
+
+// Clean path matcher
+const normalize = (path: string) => path.replace(/\/$/, "");
+const isCurrent = (href: string) => {
+    if (href === base && (currentPath === base || currentPath === ""))
+        return true;
+    // simple exact match or starts with for subpages
+    return (
+        currentPath === href || (href !== base && currentPath.startsWith(href))
+    );
+};
+---
+
+<header
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm py-2"
+    id="main-header"
+>
+    <div class="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <a href={base} class="flex items-center gap-2">
+            <div class="relative h-20 w-56">
+                <img
+                    src={`${safeBase}images/logo-full.png`}
+                    alt="PuraChata Logo"
+                    class="object-contain object-left w-full h-full"
+                />
+            </div>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav class="hidden md:flex items-center gap-6">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class:list={[
+                            "text-base font-medium transition-colors hover:text-[var(--color-primary)]",
+                            isCurrent(link.href)
+                                ? "text-[var(--color-primary)] font-bold"
+                                : "text-gray-900",
+                        ]}
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+        </nav>
+
+        {/* Actions (Lang + CTA) */}
+        <div class="hidden md:flex items-center gap-4">
+            {/* Language Selector */}
+            <div class="relative group" id="desktop-lang-switcher">
+                <button
+                    class="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-[var(--color-primary)] transition-colors px-2 py-1 rounded-md hover:bg-gray-50 bg-transparent border-none cursor-pointer"
+                    id="lang-toggle-btn"
+                >
+                    {/* Default to ES */}
+                    <div
+                        class="w-6 h-4 relative shadow-sm rounded-sm overflow-hidden"
+                    >
+                        <FlagPE className="w-full h-full object-cover" />
+                    </div>
+                    <span>Español</span>
+                    <FiChevronDown
+                        className="transition-transform duration-200 group-hover:rotate-180"
+                    />
+                </button>
+
+                {/* Dropdown (CSS hover based for simplicity or JS) */}
+                <div
+                    class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-100 py-1 flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+                >
+                    <button
+                        class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm w-full text-left transition-colors bg-gray-50 text-[var(--color-primary)] font-medium"
+                    >
+                        <div
+                            class="w-6 h-4 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0"
+                        >
+                            <FlagPE className="w-full h-full" />
+                        </div>
+                        <span>Español</span>
+                    </button>
+                    <a
+                        href="/english-notice"
+                        class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm w-full text-left transition-colors text-gray-700"
+                    >
+                        <div
+                            class="w-6 h-4 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0"
+                        >
+                            <FlagUS className="w-full h-full" />
+                        </div>
+                        <span>English</span>
+                    </a>
+                </div>
+            </div>
+
+            <a
+                href="https://wa.me/51917057569"
+                target="_blank"
+                class="inline-flex items-center justify-center rounded-md font-bold text-sm h-9 px-4 bg-[var(--color-primary)] text-white hover:bg-opacity-90 transition-colors"
+            >
+                Reservar Ahora
+            </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+            class="md:hidden text-2xl text-[var(--color-primary)] bg-transparent border-none cursor-pointer"
+            id="mobile-menu-btn"
+            aria-label="Toggle menu"
+        >
+            <FiMenu />
+        </button>
+    </div>
+
+    {/* Mobile Menu Content (Hidden by default) */}
+    <div
+        id="mobile-menu"
+        class="md:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg p-6 flex-col gap-4 border-t border-gray-100 h-screen transition-all"
+    >
+        {
+            navLinks.map((link) => (
+                <a
+                    href={link.href}
+                    class="text-lg font-medium text-gray-800 hover:text-[var(--color-primary)]"
+                >
+                    {link.name}
+                </a>
+            ))
+        }
+
+        <div class="border-t border-gray-100 pt-4 mt-2">
+            <p class="text-sm text-gray-500 font-medium mb-3">
+                Idioma / Language
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+                <button
+                    class="flex items-center justify-center gap-2 px-3 py-2 rounded-lg border text-sm transition-all border-[var(--color-primary)] bg-green-50 text-[var(--color-primary)] font-medium ring-1 ring-[var(--color-primary)]"
+                >
+                    <div
+                        class="w-5 h-3.5 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0"
+                    >
+                        <FlagPE className="w-full h-full" />
+                    </div>
+                    <span>Español</span>
+                </button>
+                <a
+                    href="/english-notice"
+                    class="flex items-center justify-center gap-2 px-3 py-2 rounded-lg border text-sm transition-all border-gray-200 hover:border-gray-300"
+                >
+                    <div
+                        class="w-5 h-3.5 relative shadow-sm rounded-sm overflow-hidden flex-shrink-0"
+                    >
+                        <FlagUS className="w-full h-full" />
+                    </div>
+                    <span>English</span>
+                </a>
+            </div>
+        </div>
+
+        <a
+            href="https://wa.me/51917057569"
+            target="_blank"
+            class="w-full inline-flex items-center justify-center rounded-md font-bold text-base h-11 px-8 bg-[var(--color-primary)] text-white hover:bg-opacity-90 transition-colors"
+        >
+            Reservar Ahora
+        </a>
+    </div>
+</header>
+
+<script>
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+            const isHidden = mobileMenu.classList.contains("hidden");
+            if (isHidden) {
+                mobileMenu.classList.remove("hidden");
+                mobileMenu.classList.add("flex");
+                // Change icon could be done here if strictly needed, but simple toggle is enough
+            } else {
+                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove("flex");
+            }
+        });
+
+        // Close menu when clicking links
+        const links = mobileMenu.querySelectorAll("a");
+        links.forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove("flex");
+            });
+        });
+    }
+</script>

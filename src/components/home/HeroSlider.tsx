@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const base = import.meta.env.BASE_URL;
+const safeBase = base.endsWith("/") ? base : base + "/";
 
 const images = [
-    `${base}images/hero-slider/hero-slide-1.jpg`,
-    `${base}images/hero-slider/hero-slide-2.jpg`,
-    `${base}images/hero-slider/hero-slide-3.jpg`,
-    `${base}images/hero-slider/hero-slide-4.jpg`,
+    `${safeBase}images/hero-slider/hero-slide-1.jpg`,
+    `${safeBase}images/hero-slider/hero-slide-2.jpg`,
+    `${safeBase}images/hero-slider/hero-slide-3.jpg`,
+    `${safeBase}images/hero-slider/hero-slide-4.jpg`,
 ];
 
 export const HeroSlider = () => {
