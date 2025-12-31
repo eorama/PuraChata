@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { FiWifi, FiWind, FiCoffee, FiStar, FiArrowRight } from "react-icons/fi";
+---
+
+<Layout title="Alojamiento | PuraChata Ecolodge">
+    <div class="pt-24 pb-20">
+        {/* Hero Section */}
+        <div class="container mx-auto px-4 mb-16">
+            <div
+                class="relative h-[60vh] min-h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl"
+            >
+                <img
+                    src="/images/alojamiento-consciente-v2.jpg"
+                    alt="Alojamiento en Pura Chata Ecolodge"
+                    class="object-cover w-full h-full"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-16"
+                >
+                    <span
+                        class="text-[var(--color-secondary)] font-bold tracking-wider uppercase text-sm md:text-base mb-2"
+                    >
+                        Confort & Naturaleza
+                    </span>
+                    <h1
+                        class="text-4xl md:text-6xl font-serif text-white font-bold leading-tight max-w-4xl shadow-sm"
+                    >
+                        Tu refugio en el corazón de la Amazonía
+                    </h1>
+                    <p
+                        class="text-gray-200 text-lg md:text-xl max-w-2xl mt-4 drop-shadow-md"
+                    >
+                        Descubre la armonía perfecta entre la comodidad moderna
+                        y la selva virgen. Un espacio diseñado para descansar,
+                        reconectar y soñar despierto.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {/* Intro Text SEO */}
+        <Section container className="!pt-0">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <h2
+                    class="text-3xl md:text-4xl font-serif text-[var(--color-primary)]"
+                >
+                    Alojamiento Consciente y Sostenible
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    En <strong>Pura Chata Eco-Lodge</strong>, entendemos que el
+                    descanso es parte fundamental de la experiencia. Nuestras
+                    instalaciones han sido construidas respetando el entorno,
+                    utilizando materiales locales y técnicas tradicionales que
+                    garantizan frescura y ventilación natural.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Cada espacio está pensado para ofrecer vistas privilegiadas
+                    de la selva, permitiéndote despertar con el canto de las
+                    aves y dormir bajo un manto de estrellas, todo ello sin
+                    renunciar al confort esencial para una estancia placentera e
+                    inolvidable.
+                </p>
+            </div>
+        </Section>
+
+        {/* Bungalows Independientes */}
+        <Section
+            container
+            className="bg-[var(--color-background-soft)] rounded-3xl my-12"
+        >
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div
+                    class="order-2 lg:order-1 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+                >
+                    <img
+                        src="/images/home-bungalow-sunset.jpg"
+                        alt="Bungalows Privados Pura Chata"
+                        class="object-cover w-full h-full"
+                    />
+                </div>
+                <div class="order-1 lg:order-2 space-y-6">
+                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
+                        Bungalows Independientes
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nuestros bungalows privados son la joya de Pura Chata.
+                        Diseñados para brindar total privacidad, están dispersos
+                        estratégicamente en nuestra finca de 14 hectáreas para
+                        garantizar una inmersión total en la naturaleza.
+                    </p>
+                    <ul class="space-y-3 pt-2">
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-white rounded-full text-[var(--color-primary)] shadow-sm"
+                                ><FiStar /></span
+                            >
+                            Baño privado con ducha
+                        </li>
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-white rounded-full text-[var(--color-primary)] shadow-sm"
+                                ><FiWind /></span
+                            >
+                            Ventilación natural y mosquiteros
+                        </li>
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-white rounded-full text-[var(--color-primary)] shadow-sm"
+                                ><FiArrowRight /></span
+                            >
+                            Terraza privada con hamaca
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </Section>
+
+        {/* Habitaciones */}
+        <Section container>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
+                        Habitaciones Confort
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Para aquellos que prefieren una estancia más clásica,
+                        nuestras habitaciones en el lodge principal ofrecen
+                        comodidad y cercanía a las áreas comunes. Perfectas para
+                        descansar después de un día de aventura, con una
+                        decoración acogedora inspirada en la artesanía local.
+                    </p>
+                    <ul class="space-y-3 pt-2">
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-[var(--color-background-soft)] rounded-full text-[var(--color-primary)]"
+                                ><FiWifi /></span
+                            >
+                            Conexión Wi-Fi (en áreas comunes)
+                        </li>
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-[var(--color-background-soft)] rounded-full text-[var(--color-primary)]"
+                                ><FiStar /></span
+                            >
+                            Ropa de cama de alta calidad
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+                >
+                    <img
+                        src="/images/alojamiento-consciente-v2.jpg"
+                        alt="Habitación Confort Pura Chata"
+                        class="object-cover w-full h-full"
+                    />
+                </div>
+            </div>
+        </Section>
+
+        {/* Exteriores & Relax */}
+        <Section
+            container
+            className="bg-[var(--color-background-soft)] rounded-3xl my-12"
+        >
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div
+                    class="order-2 lg:order-1 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+                >
+                    <img
+                        src="/images/experiencia-estadia-swing.jpg"
+                        alt="Exteriores y hamacas Pura Chata"
+                        class="object-cover w-full h-full"
+                    />
+                </div>
+                <div class="order-1 lg:order-2 space-y-6">
+                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
+                        Exteriores y Relax
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        La experiencia Pura Chata se vive también fuera de la
+                        habitación. Contamos con amplias zonas verdes, malocas
+                        de descanso y senderos que te invitan a caminar descalzo
+                        sobre la tierra.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nuestra <strong>piscina natural</strong> y las zonas de hamacas
+                        frente a la laguna son los lugares predilectos para leer un
+                        libro, meditar o simplemente contemplar el atardecer amazónico.
+                    </p>
+                </div>
+            </div>
+        </Section>
+
+        {/* Restaurante & Bar */}
+        <Section container>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
+                        Restaurante & Bar
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Sabores que cuentan historias. Nuestro restaurante
+                        ofrece una fusión de gastronomía local e internacional,
+                        utilizando ingredientes frescos de nuestra propia chacra
+                        y de productores locales vecinos.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        En el bar, disfruta de cócteles exóticos preparados con
+                        frutas de la región como el camu camu y el copoazú,
+                        mientras compartes anécdotas con otros viajeros.
+                    </p>
+                    <ul class="space-y-3 pt-2">
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-[var(--color-background-soft)] rounded-full text-[var(--color-primary)]"
+                                ><FiCoffee /></span
+                            >
+                            Desayuno amazónico incluido
+                        </li>
+                        <li
+                            class="flex items-center gap-3 text-gray-700 font-medium"
+                        >
+                            <span
+                                class="p-2 bg-[var(--color-background-soft)] rounded-full text-[var(--color-primary)]"
+                                ><FiStar /></span
+                            >
+                            Opciones vegetarianas y veganas
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl bg-gray-200"
+                >
+                    <img
+                        src="/images/restaurante-gastronomia.jpg"
+                        alt="Gastronomía Fresca y Local"
+                        class="object-cover w-full h-full"
+                    />
+                </div>
+            </div>
+        </Section>
+
+        {/* CTA BOOKING */}
+        <Section container className="my-16">
+            <div
+                class="bg-[var(--color-primary)] rounded-3xl p-12 md:p-20 text-center text-white shadow-2xl relative overflow-hidden"
+            >
+                <div
+                    class="absolute top-0 left-0 w-full h-full opacity-10 bg-repeat space-x-12"
+                    style={{
+                        backgroundImage: `url('/images/logo-icon-white.png')`,
+                        backgroundSize: "100px",
+                    }}
+                >
+                </div>
+                <div class="relative z-10 max-w-3xl mx-auto space-y-8">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold">
+                        ¿Listo para vivir la magia de la selva?
+                    </h2>
+                    <p class="text-xl md:text-2xl text-green-100 font-medium">
+                        Reserva tu estadía en Pura Chata Eco-Lodge y asegura tu
+                        lugar en el paraíso.
+                    </p>
+                    <div class="pt-4">
+                        <Button
+                            size="lg"
+                            className="bg-white text-[var(--color-primary)] hover:bg-gray-100 font-bold text-lg px-12 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
+                            href="https://purachatalodge.aloha.co/cottages?request-type=embed"
+                            target="_blank"
+                        >
+                            Reserva tu Estadía Ahora
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </Section>
+    </div>
+</Layout>

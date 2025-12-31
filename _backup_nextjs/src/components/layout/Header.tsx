@@ -1,4 +1,9 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { FlagPE, FlagUS } from '@/components/ui/icons/Flags';
@@ -10,18 +15,17 @@ function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-interface HeaderProps {
-    currentPath?: string;
-}
-
-export const Header = ({ currentPath = '' }: HeaderProps) => {
+export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const [language, setLanguage] = useState<'es' | 'en'>('es');
     const [isLangOpen, setIsLangOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
+
+
         // Close dropdown when clicking outside
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -31,6 +35,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
         document.addEventListener('mousedown', handleClickOutside);
 
         return () => {
+
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
@@ -48,6 +53,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
     const toggleLanguage = (lang: 'es' | 'en') => {
         setLanguage(lang);
         setIsLangOpen(false);
+        // Here you would typically trigger the language change logic
     };
 
     return (
@@ -59,31 +65,31 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2">
                     <div className="relative h-20 w-56">
-                        <img
+                        <Image
                             src="/images/logo-full.png"
                             alt="PuraChata Logo"
-                            className="object-contain object-left w-full h-full"
+                            fill
+                            className="object-contain object-left"
+                            priority
                         />
                     </div>
-                </a>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-6">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
                             className={cn(
                                 'text-base font-medium transition-colors hover:text-[var(--color-primary)]',
-                                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                                    ? 'text-[var(--color-primary)] font-bold'
-                                    : 'text-gray-900'
+                                pathname === link.href ? 'text-[var(--color-primary)] font-bold' : 'text-gray-900'
                             )}
                         >
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
 
@@ -127,7 +133,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
                                     </div>
                                     <span>Español</span>
                                 </button>
-                                <a
+                                <Link
                                     href="/english-notice"
                                     className={cn(
                                         "flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm w-full text-left transition-colors text-gray-700"
@@ -138,7 +144,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
                                         <FlagUS className="w-full h-full" />
                                     </div>
                                     <span>English</span>
-                                </a>
+                                </Link>
                             </div>
                         )}
                     </div>
@@ -163,16 +169,16 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-6 flex flex-col gap-4 border-t border-gray-100 h-screen">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-6 flex flex-col gap-4 border-t border-gray-100">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
                             className="text-lg font-medium text-gray-800 hover:text-[var(--color-primary)]"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
 
                     <div className="border-t border-gray-100 pt-4 mt-2">
@@ -190,7 +196,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
                                 </div>
                                 <span>Español</span>
                             </button>
-                            <a
+                            <Link
                                 href="/english-notice"
                                 onClick={() => setIsOpen(false)}
                                 className={cn(
@@ -201,7 +207,7 @@ export const Header = ({ currentPath = '' }: HeaderProps) => {
                                     <FlagUS className="w-full h-full" />
                                 </div>
                                 <span>English</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

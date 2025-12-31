@@ -1,0 +1,237 @@
+[2m17:36:10[22m [34m[content][39m Syncing content
+[2m17:36:10[22m [34m[content][39m Synced content
+[2m17:36:10[22m [34m[types][39m Generated [2m62ms[22m
+[2m17:36:10[22m [34m[check][39m Getting diagnostics for Astro files in C:\wamp64\www\react\Purachata...
+[96m_backup_nextjs/next.config.ts[0m:[93m1[0m:[93m33[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next' or its corresponding type declarations.
+
+[7m1[0m import type { NextConfig } from "next";
+[7m [0m [91m                                ~~~~~~[0m
+
+[96m_backup_nextjs/src/app/layout.tsx[0m:[93m2[0m:[93m40[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/font/google' or its corresponding type declarations.
+
+[7m2[0m import { Playfair_Display, Lato } from "next/font/google";
+[7m [0m [91m                                       ~~~~~~~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/layout.tsx[0m:[93m1[0m:[93m31[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next' or its corresponding type declarations.
+
+[7m1[0m import type { Metadata } from "next";
+[7m [0m [91m                              ~~~~~~[0m
+
+[96m_backup_nextjs/src/app/not-found.tsx[0m:[93m1[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m1[0m import Link from 'next/link';
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/page.tsx[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m4[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/alojamiento/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/english-notice/page.tsx[0m:[93m3[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m3[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/english-notice/page.tsx[0m:[93m4[0m:[93m19[0m - [93mwarning[0m[90m ts(6133): [0m'FiAlertCircle' is declared but its value is never read.
+
+[7m4[0m import { FiGlobe, FiAlertCircle } from "react-icons/fi";
+[7m [0m [93m                  ~~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/experiencias/page.tsx[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m4[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/experiencias/allpahuayo/page.tsx[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m4[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/allpahuayo/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/allpahuayo/page.tsx[0m:[93m7[0m:[93m86[0m - [93mwarning[0m[90m ts(6133): [0m'FiCamera' is declared but its value is never read.
+
+[7m7[0m import { FiMapPin, FiCheckCircle, FiXCircle, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera, FiHeart, FiGlobe } from "react-icons/fi";
+[7m [0m [93m                                                                                     ~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/allpahuayo/page.tsx[0m:[93m7[0m:[93m46[0m - [93mwarning[0m[90m ts(6133): [0m'FiUsers' is declared but its value is never read.
+
+[7m7[0m import { FiMapPin, FiCheckCircle, FiXCircle, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera, FiHeart, FiGlobe } from "react-icons/fi";
+[7m [0m [93m                                             ~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/allpahuayo/page.tsx[0m:[93m7[0m:[93m35[0m - [93mwarning[0m[90m ts(6133): [0m'FiXCircle' is declared but its value is never read.
+
+[7m7[0m import { FiMapPin, FiCheckCircle, FiXCircle, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera, FiHeart, FiGlobe } from "react-icons/fi";
+[7m [0m [93m                                  ~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/experiencias/yarapa/page.tsx[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m4[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/yarapa/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/yarapa/page.tsx[0m:[93m7[0m:[93m55[0m - [93mwarning[0m[90m ts(6133): [0m'FiCalendar' is declared but its value is never read.
+
+[7m7[0m import { FiClock, FiMapPin, FiCheckCircle, FiXCircle, FiCalendar, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera } from "react-icons/fi";
+[7m [0m [93m                                                      ~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/yarapa/page.tsx[0m:[93m7[0m:[93m19[0m - [93mwarning[0m[90m ts(6133): [0m'FiMapPin' is declared but its value is never read.
+
+[7m7[0m import { FiClock, FiMapPin, FiCheckCircle, FiXCircle, FiCalendar, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera } from "react-icons/fi";
+[7m [0m [93m                  ~~~~~~~~[0m
+[96m_backup_nextjs/src/app/experiencias/yarapa/page.tsx[0m:[93m7[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'FiClock' is declared but its value is never read.
+
+[7m7[0m import { FiClock, FiMapPin, FiCheckCircle, FiXCircle, FiCalendar, FiUsers, FiArrowLeft, FiSun, FiDroplet, FiCamera } from "react-icons/fi";
+[7m [0m [93m         ~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/impacto-social/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/nosotros/page.tsx[0m:[93m2[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m2[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/app/nosotros/page.tsx[0m:[93m1[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m1[0m import Link from "next/link";
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/app/voluntariado/page.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from "next/image";
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/components/home/HeroSlider.tsx[0m:[93m4[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m4[0m import Image from 'next/image';
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/home/HeroSlider.tsx[0m:[93m3[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m3[0m import React, { useState, useEffect } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96m_backup_nextjs/src/components/layout/Footer.tsx[0m:[93m3[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m3[0m import Image from 'next/image';
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/layout/Footer.tsx[0m:[93m2[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m2[0m import Link from 'next/link';
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/layout/Footer.tsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96m_backup_nextjs/src/components/layout/Header.tsx[0m:[93m6[0m:[93m29[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/navigation' or its corresponding type declarations.
+
+[7m6[0m import { usePathname } from 'next/navigation';
+[7m [0m [91m                            ~~~~~~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/layout/Header.tsx[0m:[93m5[0m:[93m19[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/image' or its corresponding type declarations.
+
+[7m5[0m import Image from 'next/image';
+[7m [0m [91m                  ~~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/layout/Header.tsx[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m ts(2307): [0mCannot find module 'next/link' or its corresponding type declarations.
+
+[7m4[0m import Link from 'next/link';
+[7m [0m [91m                 ~~~~~~~~~~~[0m
+[96m_backup_nextjs/src/components/layout/Header.tsx[0m:[93m3[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m3[0m import React, { useState, useEffect, useRef } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96m_backup_nextjs/src/components/ui/GalleryCarousel.tsx[0m:[93m3[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m3[0m import React, { useState } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96m_backup_nextjs/src/components/ui/icons/Flags.tsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/home/HeroSlider.tsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/layout/Footer.tsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/layout/Header.tsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect, useRef } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/ui/GalleryCarousel.tsx[0m:[93m3[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m3[0m import React, { useState } from 'react';
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/ui/icons/Flags.tsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/contacto.astro[0m:[93m90[0m:[93m39[0m - [93mwarning[0m[90m ts(6385): [0m'event' is deprecated.
+
+[7m90[0m                             onsubmit="event.preventDefault(); alert('Mensaje enviado. Nos pondremos en contacto contigo.');"
+[7m  [0m [93m                                      ~~~~~[0m
+
+[96msrc/pages/english-notice.astro[0m:[93m5[0m:[93m19[0m - [93mwarning[0m[90m ts(6133): [0m'FiAlertCircle' is declared but its value is never read.
+
+[7m5[0m import { FiGlobe, FiAlertCircle } from "react-icons/fi";
+[7m [0m [93m                  ~~~~~~~~~~~~~[0m
+
+[96msrc/pages/voluntariado.astro[0m:[93m134[0m:[93m35[0m - [93mwarning[0m[90m ts(6385): [0m'event' is deprecated.
+
+[7m134[0m                         onsubmit="event.preventDefault(); alert('Gracias por tu postulaci├│n. Te contactaremos pronto.');"
+[7m   [0m [93m                                  ~~~~~[0m
+
+[96msrc/pages/experiencias/allpahuayo.astro[0m:[93m10[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'FiUsers' is declared but its value is never read.
+
+[7m10[0m     FiUsers,
+[7m  [0m [93m    ~~~~~~~[0m
+[96msrc/pages/experiencias/allpahuayo.astro[0m:[93m9[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'FiXCircle' is declared but its value is never read.
+
+[7m9[0m     FiXCircle,
+[7m [0m [93m    ~~~~~~~~~[0m
+
+[96msrc/pages/experiencias/index.astro[0m:[93m2[0m:[93m20[0m - [91merror[0m[90m ts(2307): [0mCannot find module '../layouts/Layout.astro' or its corresponding type declarations.
+
+[7m2[0m import Layout from "../layouts/Layout.astro";
+[7m [0m [91m                   ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/experiencias/yarapa.astro[0m:[93m11[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'FiCalendar' is declared but its value is never read.
+
+[7m11[0m     FiCalendar,
+[7m  [0m [93m    ~~~~~~~~~~[0m
+[96msrc/pages/experiencias/yarapa.astro[0m:[93m8[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'FiMapPin' is declared but its value is never read.
+
+[7m8[0m     FiMapPin,
+[7m [0m [93m    ~~~~~~~~[0m
+[96msrc/pages/experiencias/yarapa.astro[0m:[93m7[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'FiClock' is declared but its value is never read.
+
+[7m7[0m     FiClock,
+[7m [0m [93m    ~~~~~~~[0m
+
+Result (49 files): 
+- 25 errors
+- 0 warnings
+- 25 hints
+

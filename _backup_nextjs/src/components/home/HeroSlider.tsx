@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
@@ -33,10 +36,12 @@ export const HeroSlider = () => {
                     }}
                     className="absolute inset-0 w-full h-full"
                 >
-                    <img
+                    <Image
                         src={images[currentIndex]}
                         alt="Pura Chata Amazonía"
-                        className="object-cover w-full h-full"
+                        fill
+                        className="object-cover"
+                        priority={true}
                     />
                 </motion.div>
             </AnimatePresence>

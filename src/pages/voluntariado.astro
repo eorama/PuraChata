@@ -1,0 +1,216 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+---
+
+<Layout title="Voluntariado | PuraChata Ecolodge">
+    <div class="flex flex-col">
+        {/* Hero Section */}
+        <section
+            class="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="/images/social-reforestation.png"
+                    alt="Voluntariado en Pura Chata"
+                    class="object-cover w-full h-full"
+                />
+                <div class="absolute inset-0 bg-black/70"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1
+                    class="font-serif text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg !text-white"
+                >
+                    Programa de Voluntariado
+                </h1>
+                <p
+                    class="text-xl md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md !text-white"
+                >
+                    ¿Te gustaría vivir una experiencia auténtica en plena selva,
+                    rodeada de naturaleza y cultura local?
+                </p>
+            </div>
+        </section>
+
+        <Section container>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-start mt-12">
+                    <div class="prose text-gray-700">
+                        <h3
+                            class="text-2xl text-[var(--color-primary)] font-bold mb-4"
+                        >
+                            ¿En qué consiste?
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Gestión de reservas</li>
+                            <li>Apoyo en atención al cliente</li>
+                            <li>Organización de información interna</li>
+                            <li>Asistencia básica en redes o correo</li>
+                        </ul>
+
+                        <h3
+                            class="text-2xl text-[var(--color-primary)] font-bold mt-8 mb-4"
+                        >
+                            Requisitos
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Buena organización</li>
+                            <li>Iniciativa y responsabilidad</li>
+                            <li>Ganas de aprender y colaborar</li>
+                            <li>No es necesario tener estudios formales</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-[var(--color-background-soft)] p-8 rounded-2xl shadow-sm"
+                    >
+                        <h3
+                            class="text-2xl text-[var(--color-primary)] font-bold mb-4"
+                        >
+                            Condiciones & Beneficios
+                        </h3>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <span class="text-xl">📅</span>
+                                <div>
+                                    <strong>Estancia mínima:</strong> 2 meses
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-xl">⏰</span>
+                                <div>
+                                    <strong>Jornada:</strong> 6 horas/día, 5 días/semana
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-xl">🌴</span>
+                                <div>
+                                    2 días libres para descansar o explorar
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-xl">💧</span>
+                                <div>
+                                    <strong>Incluye:</strong> Alojamiento y alimentación
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-xl">💸</span>
+                                <div>
+                                    <strong>Aporte:</strong> 15 soles diarios (gastos
+                                    logísticos)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500 mt-6 italic">
+                                "La selva te espera para vivir una experiencia
+                                transformadora."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Formulario de Postulación */}
+                <div
+                    class="mt-20 max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100"
+                    id="postular"
+                >
+                    <h2
+                        class="text-3xl font-serif text-center mb-2 text-[var(--color-primary)]"
+                    >
+                        Postula al Voluntariado
+                    </h2>
+                    <p class="text-center text-gray-600 mb-8">
+                        Completa el formulario y nos pondremos en contacto
+                        contigo.
+                    </p>
+
+                    <form
+                        class="space-y-6"
+                        onsubmit="event.preventDefault(); alert('Gracias por tu postulación. Te contactaremos pronto.');"
+                    >
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700"
+                                    >Nombre Completo</label
+                                >
+                                <input
+                                    type="text"
+                                    class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                    placeholder="Tu nombre"
+                                    required
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                    placeholder="tucorreo@ejemplo.com"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700"
+                                    >Teléfono / WhatsApp</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                    placeholder="+51 ..."
+                                    required
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700"
+                                    >País de Residencia</label
+                                >
+                                <input
+                                    type="text"
+                                    class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                    placeholder="Ej: España, Perú..."
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-gray-700"
+                                >¿Por qué quieres ser voluntario?</label
+                            >
+                            <textarea
+                                class="w-full p-3 border border-gray-200 rounded-lg h-32 focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                placeholder="Cuéntanos brevemente sobre ti y tu motivación..."
+                                required></textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-gray-700"
+                                >Fechas tentativas</label
+                            >
+                            <input
+                                type="text"
+                                class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none transition-all"
+                                placeholder="Ej: Enero - Marzo 2025"
+                                required
+                            />
+                        </div>
+
+                        <Button fullWidth size="lg" type="submit">
+                            Enviar Postulación
+                        </Button>
+                    </form>
+                </div>
+            </div>
+        </Section>
+    </div>
+</Layout>

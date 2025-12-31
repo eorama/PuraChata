@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --color-primary: #2E5936;
+  /* Verde Amazonía */
+  --color-secondary: #F0EAD6;
+  /* Arena Blanca / Hueso */
+  --color-accent: #D67897;
+  /* Rosado Delfín */
+
+  /* Text & Backgrounds */
+  --color-text-main: #333333;
+  /* Gris Carbón */
+  --color-background-soft: #F9F9F7;
+
+  /* Fonts - managed by @fontsource but referenced here if needed or mostly via tailwind config */
+  --font-playfair: "Playfair Display", serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #FFFFFF;
+    color: var(--color-text-main);
+    font-family: theme('fontFamily.sans');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme('fontFamily.serif');
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+}

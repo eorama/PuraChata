@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { FiInstagram, FiFacebook } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -10,10 +12,11 @@ export const Footer = () => {
                 {/* Column 1: Brand */}
                 <div className="flex flex-col gap-4">
                     <div className="relative h-16 w-48">
-                        <img
+                        <Image
                             src="/images/logo-full.png"
                             alt="PuraChata Logo"
-                            className="object-contain object-left w-full h-full"
+                            fill
+                            className="object-contain object-left"
                         />
                     </div>
                     <p className="text-sm opacity-80 max-w-xs">
@@ -27,10 +30,10 @@ export const Footer = () => {
                 {/* Column 2: Quick Links */}
                 <div className="flex flex-col gap-2">
                     <h4 className="font-serif text-xl font-bold mb-2 text-[var(--color-primary)]">Enlaces Rápidos</h4>
-                    <a href="/nosotros" className="hover:text-[var(--color-primary)] transition-colors">Nosotros</a>
-                    <a href="/impacto-social" className="hover:text-[var(--color-primary)] transition-colors">Impacto Social</a>
-                    <a href="/politicas" className="hover:text-[var(--color-primary)] transition-colors">Políticas</a>
-                    <a href="/contacto" className="hover:text-[var(--color-primary)] transition-colors">Contáctanos</a>
+                    <Link href="/nosotros" className="hover:text-[var(--color-primary)] transition-colors">Nosotros</Link>
+                    <Link href="/impacto-social" className="hover:text-[var(--color-primary)] transition-colors">Impacto Social</Link>
+                    <Link href="/politicas" className="hover:text-[var(--color-primary)] transition-colors">Políticas</Link>
+                    <Link href="/contacto" className="hover:text-[var(--color-primary)] transition-colors">Contáctanos</Link>
                 </div>
 
                 {/* Column 3: Contact */}

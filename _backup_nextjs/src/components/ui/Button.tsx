@@ -10,14 +10,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     fullWidth?: boolean;
-    href?: string;
-    target?: string;
-    rel?: string;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, ButtonProps>(
-    ({ className, variant = 'primary', size = 'md', fullWidth, href, ...props }, ref) => {
-        const baseStyles = 'inline-flex items-center justify-center rounded-md font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer text-center no-underline';
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    ({ className, variant = 'primary', size = 'md', fullWidth, ...props }, ref) => {
+        const baseStyles = 'inline-flex items-center justify-center rounded-md font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer';
 
         const variants = {
             primary: 'bg-[var(--color-primary)] text-white hover:bg-opacity-90',
@@ -32,31 +29,16 @@ export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, Bu
             lg: 'h-14 px-10 text-lg',
         };
 
-        const classes = cn(
-            baseStyles,
-            variants[variant],
-            sizes[size],
-            fullWidth && 'w-full',
-            className
-        );
-
-        if (href) {
-            return (
-                <a
-                    href={href}
-                    className={classes}
-                    ref={ref as any}
-                    {...props as any}
-                >
-                    {props.children}
-                </a>
-            );
-        }
-
         return (
             <button
                 ref={ref}
-                className={classes}
+                className={cn(
+                    baseStyles,
+                    variants[variant],
+                    sizes[size],
+                    fullWidth && 'w-full',
+                    className
+                )}
                 {...props}
             />
         );
