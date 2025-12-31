@@ -1,19 +1,27 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
+// Define the repository name for GitHub Pages
 const repoName = '/PuraChata';
+
+// Check environment states
+const isProd = process.env.NODE_ENV === 'production';
+const isCI = process.env.CI === 'true';
+
+// We use the basePath only when building for production (CI or local build)
+// valid for GitHub Pages.
+const useBasePath = isProd || isCI;
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // Only use basePath in production to allow standard localhost:3000 behavior in dev
-  basePath: isProd ? repoName : '',
+  // Dynamic basePath based on environment
+  basePath: useBasePath ? repoName : '',
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
   env: {
-    // This var will be '' in dev and '/PuraChata' in prod
-    NEXT_PUBLIC_BASE_PATH: isProd ? repoName : '',
+    // Expose basePath to the client side
+    NEXT_PUBLIC_BASE_PATH: useBasePath ? repoName : '',
   },
 };
 
