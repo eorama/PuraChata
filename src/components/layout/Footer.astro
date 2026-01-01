@@ -1,6 +1,6 @@
 ---
 import { FiInstagram, FiFacebook } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 const base = import.meta.env.BASE_URL;
 // Ensure base ends with slash if it doesn't (though typically ImportMeta.env.BASE_URL respects base config)
@@ -69,18 +69,25 @@ const safeBase = base.endsWith("/") ? base : base + "/";
             </p>
             <div class="flex gap-4 mt-2">
                 <a
-                    href="https://facebook.com"
+                    href="https://facebook.com/profile.php?id=61572478867050"
                     target="_blank"
                     rel="noreferrer"
                     class="text-2xl hover:text-[var(--color-primary)]"
                     aria-label="Facebook"><FiFacebook /></a
                 >
                 <a
-                    href="https://instagram.com"
+                    href="https://instagram.com/purachataecolodge/"
                     target="_blank"
                     rel="noreferrer"
                     class="text-2xl hover:text-[var(--color-primary)]"
                     aria-label="Instagram"><FiInstagram /></a
+                >
+                <a
+                    href="https://tiktok.com/@purachata.ecolodge"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-2xl hover:text-[var(--color-primary)]"
+                    aria-label="TikTok"><FaTiktok /></a
                 >
                 <a
                     href="https://wa.me/51917057569"
