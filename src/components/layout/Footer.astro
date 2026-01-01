@@ -35,22 +35,22 @@ const safeBase = base.endsWith("/") ? base : base + "/";
                 Enlaces Rápidos
             </h4>
             <a
-                href="/nosotros"
+                href={`${safeBase}nosotros`}
                 class="hover:text-[var(--color-primary)] transition-colors"
                 >Nosotros</a
             >
             <a
-                href="/impacto-social"
+                href={`${safeBase}impacto-social`}
                 class="hover:text-[var(--color-primary)] transition-colors"
                 >Impacto Social</a
             >
             <a
-                href="/politicas"
+                href={`${safeBase}politicas`}
                 class="hover:text-[var(--color-primary)] transition-colors"
                 >Políticas</a
             >
             <a
-                href="/contacto"
+                href={`${safeBase}contacto`}
                 class="hover:text-[var(--color-primary)] transition-colors"
                 >Contáctanos</a
             >
