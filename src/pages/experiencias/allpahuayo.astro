@@ -110,6 +110,39 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                         </div>
                     </div>
 
+                    {/* CREA Videos */}
+                    <div class="space-y-6">
+                        <h3
+                            class="text-2xl font-serif text-[var(--color-primary)] font-bold"
+                        >
+                            Conoce el Proyecto CREA en Acción
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                            >
+                                <iframe
+                                    class="w-full aspect-video"
+                                    src="https://www.youtube.com/embed/AMg3T3eBgXY"
+                                    title="Centro de Rescate Amazónico - CREA"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div
+                                class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                            >
+                                <iframe
+                                    class="w-full aspect-video"
+                                    src="https://www.youtube.com/embed/0vuqyAUappM"
+                                    title="Voluntariado en el CREA"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Allpahuayo Info */}
                     <div>
                         <h2
@@ -382,11 +415,10 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                             <Button
                                 fullWidth
                                 size="lg"
-                                href="https://wa.me/51917057569?text=Hola,%20me%20interesa%20el%20Full%20Day%20Allpahuayo%20y%20CREA"
-                                target="_blank"
+                                href={safeBase + "reserva"}
                                 className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 shadow-lg mb-4"
                             >
-                                Reservar Tour
+                                Reservar Ahora
                             </Button>
                             <p
                                 class="text-xs text-gray-500 text-center mx-auto max-w-[200px]"

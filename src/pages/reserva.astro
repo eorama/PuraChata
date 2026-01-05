@@ -1,0 +1,689 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "@/components/ui/Section.astro";
+import Button from "@/components/ui/Button.astro";
+import { FiCalendar, FiUsers, FiCheckCircle } from "react-icons/fi";
+
+const safeBase = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + "/";
+---
+
+<Layout title="Reserva tu Experiencia | PuraChata Ecolodge">
+    <div class="pt-24 pb-20">
+        {/* Header Hero */}
+        {/* Header Hero with Background */}
+        <div
+            class="relative h-[500px] flex items-center justify-center text-white overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src={safeBase + "images/hero-bg.png"}
+                    alt="Reserva tu aventura"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 text-center">
+                <h1
+                    class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg"
+                >
+                    Reserva tu Aventura
+                </h1>
+                <p
+                    class="text-lg md:text-xl font-light opacity-95 max-w-2xl mx-auto drop-shadow-md"
+                >
+                    Estás a un paso de vivir la magia de la Amazonía.
+                </p>
+            </div>
+        </div>
+
+        {/* Steps Process */}
+        <Section container className="py-12">
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                {/* Connecting Line (Desktop) */}
+                <div
+                    class="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-200 z-0"
+                >
+                </div>
+
+                {/* Step 1 */}
+                <div
+                    class="relative z-10 flex flex-col items-center text-center group"
+                >
+                    <div
+                        class="w-24 h-24 rounded-full bg-white border-4 border-[var(--color-primary)] text-[var(--color-primary)] flex items-center justify-center text-3xl font-bold shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        1
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-[var(--color-primary)] mb-3 uppercase tracking-wider"
+                    >
+                        Elige tu Paquete
+                    </h3>
+                    <p class="text-gray-600 text-sm max-w-xs mx-auto">
+                        REVISA TUS FECHAS DE VUELO ANTES, AGREGA NÚMERO DE
+                        ADULTOS Y NIÑOS, ELIGE EL TIPO DE HABITACIÓN QUE DESEAS
+                    </p>
+                </div>
+
+                {/* Step 2 */}
+                <div
+                    class="relative z-10 flex flex-col items-center text-center group"
+                >
+                    <div
+                        class="w-24 h-24 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-3xl font-bold shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        2
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-[var(--color-primary)] mb-3 uppercase tracking-wider"
+                    >
+                        Rellena tus Datos
+                    </h3>
+                    <p class="text-gray-600 text-sm max-w-xs mx-auto">
+                        ES NECESARIO PARA REALIZAR TU RESERVA.
+                    </p>
+                </div>
+
+                {/* Step 3 */}
+                <div
+                    class="relative z-10 flex flex-col items-center text-center group"
+                >
+                    <div
+                        class="w-24 h-24 rounded-full bg-white border-4 border-gray-300 text-gray-400 flex items-center justify-center text-3xl font-bold shadow-lg mb-6"
+                    >
+                        3
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-500 mb-3 uppercase tracking-wider"
+                    >
+                        Realiza el 50%
+                    </h3>
+                    <p class="text-gray-500 text-sm max-w-xs mx-auto">
+                        RESERVA YA Y NO TE QUEDES SIN FECHAS. ¡NO ESPERES MÁS Y
+                        RESERVA PARA UN VIAJE INOLVIDABLE!
+                    </p>
+                </div>
+            </div>
+        </Section>
+
+        {/* Booking Form Layout */}
+        <Section
+            container
+            className="bg-white rounded-3xl overflow-hidden border border-gray-100 !p-0"
+        >
+            <div class="grid lg:grid-cols-5 bg-gray-50/50">
+                {
+                    /* Visual Side (Left) could be Summary, but user wants Calendar/Selection Logic mock */
+                }
+
+                {/* Main Form Area */}
+                <div class="lg:col-span-3 p-8 md:p-12">
+                    <div class="max-w-[800px] mx-auto">
+                        <div class="mb-8 border-b pb-4">
+                            <h2
+                                class="text-3xl font-serif text-[var(--color-primary)] mb-2"
+                            >
+                                Detalles de la Reserva
+                            </h2>
+                            <p class="text-gray-600">
+                                Completa la información para asegurar tu
+                                disponibilidad.
+                            </p>
+                        </div>
+
+                        <form
+                            id="reservation-form"
+                            action={`${safeBase}reserva-confirmada`}
+                            class="space-y-8"
+                        >
+                            {/* 1. Selection Mock */}
+                            <div
+                                class="grid md:grid-cols-2 gap-6 bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                            >
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-bold text-gray-700"
+                                        >Llegada</label
+                                    >
+                                    <div class="relative">
+                                        <input
+                                            type="date"
+                                            id="date-arrival"
+                                            required
+                                            class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-bold text-gray-700"
+                                        >Salida</label
+                                    >
+                                    <div class="relative">
+                                        <input
+                                            type="date"
+                                            id="date-departure"
+                                            required
+                                            class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-bold text-gray-700"
+                                        >Adultos</label
+                                    >
+                                    <select
+                                        id="pax-adults"
+                                        class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                    >
+                                        <option value="1">1 Adulto</option>
+                                        <option value="2" selected
+                                            >2 Adultos</option
+                                        >
+                                        <option value="3">3 Adultos</option>
+                                        <option value="4+">Más de 4</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-bold text-gray-700"
+                                        >Niños</label
+                                    >
+                                    <select
+                                        id="pax-children"
+                                        class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                    >
+                                        <option value="0">Sin niños</option>
+                                        <option value="1">1 Niño</option>
+                                        <option value="2">2 Niños</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-2 space-y-2">
+                                    <label
+                                        class="text-sm font-bold text-gray-700"
+                                        >Paquete / Experiencia</label
+                                    >
+                                    <select
+                                        id="package-select"
+                                        class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                    >
+                                        <option value=""
+                                            >Selecciona tu Experiencia...</option
+                                        >
+                                        <option
+                                            value="selva-viva-3d2n"
+                                            data-price="350"
+                                            >Selva Viva (3 Días + 2 Noches) -
+                                            $350</option
+                                        >
+                                        <option
+                                            value="aguas-sagradas-4d3n"
+                                            data-price="450"
+                                            >Aguas Sagradas (4 Días + 3 Noches)
+                                            - $450</option
+                                        >
+                                        <option
+                                            value="camino-verde-5d4n"
+                                            data-price="550"
+                                            >Camino Verde (5 Días + 4 Noches) -
+                                            $550</option
+                                        >
+                                        <option
+                                            value="explorando-amazonas-6d5n"
+                                            data-price="650"
+                                            >Explorando el Amazonas (6 Días + 5
+                                            Noches) - $650</option
+                                        >
+                                        <option
+                                            value="guardianes-selva-7d6n"
+                                            data-price="750"
+                                            >Guardianes de la Selva (7 Días + 6
+                                            Noches) - $750</option
+                                        >
+                                        <option value="3d2n" data-price="300"
+                                            >Pura Chata Esencial (3D/2N) - $300</option
+                                        >
+                                        <option
+                                            value="full-day-yarapa"
+                                            data-price="150"
+                                            >Full Day Yarapa - $150</option
+                                        >
+                                        <option
+                                            value="full-day-allpahuayo"
+                                            data-price="85"
+                                            >Full Day Allpahuayo - S/. 308
+                                            (~$85)</option
+                                        >
+                                        <option value="custom" data-price="0"
+                                            >Personalizado (A cotizar)</option
+                                        >
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* 2. Personal Data */}
+                            <div class="space-y-6">
+                                <h3
+                                    class="text-xl font-bold text-[var(--color-primary)] flex items-center gap-2"
+                                >
+                                    <FiUsers className="text-2xl" /> Datos Personales
+                                </h3>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Nombre *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="Tu nombre"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Apellido *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="lastname"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="Tu apellido"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Género *</label
+                                        >
+                                        <select
+                                            required
+                                            id="gender"
+                                            class="form-select w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                        >
+                                            <option value=""
+                                                >Seleccionar género</option
+                                            >
+                                            <option value="masculino"
+                                                >Masculino</option
+                                            >
+                                            <option value="femenino"
+                                                >Femenino</option
+                                            >
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >País *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="country"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="Tu país"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Correo Electrónico *</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="ejemplo@correo.com"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Teléfono / WhatsApp *</label
+                                        >
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="+51 900 000 000"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >DNI / Pasaporte *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="Número de documento"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Idioma del Guiado *</label
+                                        >
+                                        <select
+                                            required
+                                            class="form-select w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                        >
+                                            <option value="esp">Español</option>
+                                            <option value="eng">Inglés</option>
+                                            <option value="otro"
+                                                >Otro (Consultar)</option
+                                            >
+                                        </select>
+                                    </div>
+                                </div>
+
+                                {/* Additional Logistics */}
+                                <h3
+                                    class="text-xl font-bold text-[var(--color-primary)] pt-4"
+                                >
+                                    Logística y Preferencias
+                                </h3>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Vuelo de Arribo / Hotel Recogida *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="Antes de las 9 am"
+                                        />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Vuelo de Partida / Hotel Traslado *</label
+                                        >
+                                        <input
+                                            type="text"
+                                            required
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                            placeholder="A partir de las 5:30 pm"
+                                        />
+                                    </div>
+                                    <div class="md:col-span-2 space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Restricciones Alimenticias /
+                                            Alergias *</label
+                                        >
+                                        <textarea
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none h-24"
+                                            placeholder="Indícanos si eres vegetariano, vegano o tienes alguna alergia..."
+                                        ></textarea>
+                                    </div>
+                                    <div class="md:col-span-2 space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >Condición Especial / Información
+                                            Adicional</label
+                                        >
+                                        <textarea
+                                            class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none h-24"
+                                            placeholder="¿Viajas con niños pequeños, personas mayores o tienes alguna movilidad reducida?"
+                                        ></textarea>
+                                    </div>
+                                    <div class="md:col-span-2 space-y-2">
+                                        <label
+                                            class="text-sm font-medium text-gray-700"
+                                            >¿Cómo te enteraste de PuraChata?</label
+                                        >
+                                        <select
+                                            class="form-select w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                                        >
+                                            <option value=""
+                                                >Seleccionar opción</option
+                                            >
+                                            <option value="redes"
+                                                >Redes Sociales (IG/FB)</option
+                                            >
+                                            <option value="google"
+                                                >Búsqueda en Google</option
+                                            >
+                                            <option value="recomendacion"
+                                                >Recomendación</option
+                                            >
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-6">
+                                <div
+                                    class="bg-[var(--color-background-soft)] p-4 rounded-xl mb-4 hidden"
+                                    id="price-preview"
+                                >
+                                    <p
+                                        class="font-bold text-[var(--color-primary)] flex justify-between"
+                                    >
+                                        <span>Estimado Total:</span>
+                                        <span id="total-amount" class="text-xl"
+                                            >$0</span
+                                        >
+                                    </p>
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        * Precio referencial sujeto a
+                                        confirmación.
+                                    </p>
+                                </div>
+
+                                <Button
+                                    fullWidth
+                                    size="lg"
+                                    type="submit"
+                                    className="text-lg py-4 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
+                                >
+                                    Enviar Solicitud de Reserva
+                                </Button>
+                                <p
+                                    class="text-xs text-gray-500 text-center mt-4"
+                                >
+                                    Al enviar este formulario, aceptas nuestras
+                                    políticas de privacidad y términos de
+                                    servicio.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                {/* Sidebar Summary (Right) */}
+                {/* Sidebar Summary (Right) - Enhanced */}
+                <div
+                    class="lg:col-span-2 relative bg-[var(--color-primary)] text-white overflow-hidden flex flex-col rounded-3xl lg:rounded-l-none"
+                >
+                    {/* Background Image with Gradient Overlay */}
+                    <div class="absolute inset-0 z-0">
+                        <img
+                            src={safeBase +
+                                "images/alojamiento-consciente-v2.jpg"}
+                            alt="Reserva Sidebar Background"
+                            class="w-full h-full object-cover opacity-50"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/90 to-[var(--color-primary)]/50 mix-blend-multiply"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 p-8 md:p-12 flex flex-col h-full">
+                        <div class="mb-10">
+                            <h3
+                                class="text-3xl font-serif font-bold mb-6 leading-tight"
+                            >
+                                Tu Aventura <br />Comienza Aquí
+                            </h3>
+                            <p
+                                class="text-blue-50 text-lg leading-relaxed italic border-l-4 border-[var(--color-accent)] pl-4"
+                            >
+                                "Reservar en Pura Chata es garantizar una
+                                conexión auténtica con la naturaleza. Nos
+                                encargamos de cada detalle para que tú solo te
+                                preocupes por disfrutar."
+                            </p>
+                        </div>
+
+                        <div class="space-y-6 mt-auto">
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors"
+                            >
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="p-2 bg-[var(--color-accent)] rounded-lg text-[var(--color-primary)] shadow-lg"
+                                    >
+                                        <FiCheckCircle className="text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">
+                                            Reserva Segura
+                                        </h4>
+                                        <p
+                                            class="text-sm text-blue-100 opacity-90"
+                                        >
+                                            Tus datos están 100% protegidos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors"
+                            >
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="p-2 bg-[var(--color-accent)] rounded-lg text-[var(--color-primary)] shadow-lg"
+                                    >
+                                        <FiCheckCircle className="text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">
+                                            Atención Personalizada
+                                        </h4>
+                                        <p
+                                            class="text-sm text-blue-100 opacity-90"
+                                        >
+                                            Confirmamos tu solicitud en menos de
+                                            8h.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors"
+                            >
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="p-2 bg-[var(--color-accent)] rounded-lg text-[var(--color-primary)] shadow-lg"
+                                    >
+                                        <FiCheckCircle className="text-xl" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">
+                                            Flexibilidad
+                                        </h4>
+                                        <p
+                                            class="text-sm text-blue-100 opacity-90"
+                                        >
+                                            Adaptamos la experiencia a tus
+                                            necesidades.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+    </div>
+</Layout>
+
+<script>
+    const form = document.getElementById("reservation-form");
+    const packageSelect = document.getElementById("package-select");
+    const adultsSelect = document.getElementById("pax-adults");
+    const pricePreview = document.getElementById("price-preview");
+    const totalAmount = document.getElementById("total-amount");
+
+    // Update Price Estimate
+    function updatePrice() {
+        const selectedOption =
+            packageSelect.options[packageSelect.selectedIndex];
+        const pricePerPax = parseFloat(
+            selectedOption.getAttribute("data-price") || "0",
+        );
+        const adults = parseInt(adultsSelect.value) || 1;
+
+        if (pricePerPax > 0) {
+            const total = pricePerPax * adults;
+            totalAmount.textContent = `$${total} USD`;
+            pricePreview.classList.remove("hidden");
+        } else {
+            pricePreview.classList.add("hidden");
+        }
+    }
+
+    // Initial price update on load
+    if (packageSelect && adultsSelect) {
+        updatePrice();
+    }
+
+    if (packageSelect) packageSelect.addEventListener("change", updatePrice);
+    if (adultsSelect) adultsSelect.addEventListener("change", updatePrice);
+
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Collect Data
+            const formData = {
+                arrival: document.getElementById("date-arrival").value,
+                departure: document.getElementById("date-departure").value,
+                adults: document.getElementById("pax-adults").value,
+                children: document.getElementById("pax-children").value,
+                package: document.getElementById("package-select").value,
+                packageName:
+                    document.getElementById("package-select").options[
+                        document.getElementById("package-select").selectedIndex
+                    ].text,
+                name: document.getElementById("name").value,
+                lastname: document.getElementById("lastname").value,
+                gender: document.getElementById("gender").value,
+                country: document.getElementById("country").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+            };
+
+            // Save to Session Storage
+            sessionStorage.setItem("reservationData", JSON.stringify(formData));
+
+            // Redirect
+            const action = form.getAttribute("action");
+            if (action) window.location.href = action;
+        });
+    }
+</script>

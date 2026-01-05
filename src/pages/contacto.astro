@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Section from "@/components/ui/Section.astro";
 import Button from "@/components/ui/Button.astro";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+
+const safeBase = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + "/";
 ---
 
 <Layout title="Contacto | PuraChata Ecolodge">
@@ -165,47 +169,37 @@ import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
                                 Estamos ubicados en el <strong
                                     >km 42 de la carretera Iquitos-Nauta</strong
                                 > en el Centro Poblado Ex Petroleros, a 45 min de
-                                la ciudad de Iquitos, a 30 min de la ciudad de Nauta
-                                y a tan solo 20 min del río Amazonas. A nuestros laterales
-                                están los caseríos de San Lucas y 2 de mayo con quienes
-                                venimos trabajando con proyectos de ayuda comunitaria
-                                a nivel educativo y de sanidad. Durante el trayecto
-                                podrás observar diversos paisajes con mucha naturaleza
-                                y distintos pueblitos asentados a los márgenes.
+                                la ciudad de Iquitos. Un refugio natural diseñado
+                                para desconectar.
                             </p>
-                            <p>
-                                Nuestro Ecolodge está ubicado en una finca
-                                privada de 14 hectáreas de bosque virgen,
-                                rodeado de árboles medicinales, aves exóticas,
-                                diferentes familias de monos, mariposas,
-                                lagunas, donde criamos peces nativos y un
-                                pequeño río que cruza el terreno.
-                                <strong
-                                    >Aquí, la conexión con la tierra es real,
-                                    profunda y transformadora.</strong
+
+                            {/* Teaser Card for Location Page */}
+                            <div
+                                class="bg-blue-50 border border-blue-100 rounded-xl p-6 not-prose hover:shadow-md transition-shadow cursor-pointer group"
+                                onclick={`window.location.href='${safeBase}ubicacion'`}
+                            >
+                                <h3
+                                    class="text-xl font-bold text-[var(--color-primary)] mb-2 flex items-center gap-2"
                                 >
-                            </p>
-                            <p>
-                                Gracias a nuestro gran número de gallinas,
-                                disfrutamos de huevos saludables, y además,
-                                varias familias de patos enriquecen el ambiente.
-                                Cultivamos productos alimenticios esenciales en
-                                la cocina amazónica, lo que nos permite ser
-                                autosuficientes y mantener una conexión profunda
-                                con la naturaleza.
-                            </p>
-                            <p>
-                                Nuestras cabañas están ubicadas estratégicamente
-                                para que puedas admirar los encantadores
-                                escenarios y puedas llevar en tu mente uno de
-                                los mejores recuerdos durante tu estancia en
-                                nuestro alojamiento.
-                            </p>
+                                    <FiMapPin /> Cómo Llegar: Guía de Viaje
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Consulta nuestra guía detallada con mapas de
+                                    vuelo (Lima-Iquitos), aerolíneas
+                                    recomendadas, horarios y el recorrido exacto
+                                    hasta el Ecolodge.
+                                </p>
+                                <div
+                                    class="flex items-center text-[var(--color-primary)] font-semibold text-sm group-hover:underline"
+                                >
+                                    Ver Mapa y Vuelos <span class="ml-2">→</span
+                                    >
+                                </div>
+                            </div>
                         </div>
                         <div class="pt-4">
                             <Button
-                                href="https://wa.me/51917057569"
-                                target="_blank"
+                                href={`${safeBase}reserva`}
                                 className="bg-[var(--color-primary)] text-white shadow-xl hover:scale-105 transition-transform"
                             >
                                 Reserva Ahora

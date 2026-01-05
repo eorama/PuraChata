@@ -1,0 +1,176 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "@/components/ui/Section.astro";
+import { GalleryCarousel } from "@/components/ui/GalleryCarousel";
+import { FiFeather, FiMap, FiEye, FiMoon } from "react-icons/fi";
+
+const animals = [
+    { name: "Aves", desc: "Tucanes, guacamayos y colibríes", icon: "🦜" },
+    {
+        name: "Mamíferos",
+        desc: "Monos, perezosos y delfines de río",
+        icon: "🐒",
+    },
+    { name: "Reptiles", desc: "Caimanes y tortugas", icon: "🐢" },
+    { name: "Insectos", desc: "Mariposas multicolores", icon: "🦋" },
+];
+---
+
+<Layout title="Biodiversidad | Pura Chata">
+    <div class="pt-24 pb-20">
+        <Section container>
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <span
+                    class="text-[var(--color-primary)] font-bold tracking-wider uppercase text-sm"
+                    >Reserva Natural</span
+                >
+                <h1
+                    class="text-4xl md:text-5xl font-serif text-[var(--color-primary)] mt-3 mb-6"
+                >
+                    Santuario de Vida Silvestre
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed font-light">
+                    14 hectáreas de bosque virgen, lagunas y jardines donde la
+                    vida explota en cada rincón. Un escenario vivo que cambia
+                    con cada parpadeo.
+                </p>
+                <div
+                    class="w-24 h-1 bg-[var(--color-primary)]/20 mx-auto rounded-full mt-8"
+                >
+                </div>
+            </div>
+
+            {/* Flora & Fauna Highlight */}
+            <div class="flex flex-col md:flex-row gap-8 mb-20">
+                <div
+                    class="flex-1 bg-[var(--color-background-soft)] rounded-3xl p-10 relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-10 font-serif text-9xl text-[var(--color-primary)] font-bold pointer-events-none"
+                    >
+                        Flora
+                    </div>
+                    <div class="relative z-10">
+                        <h3
+                            class="text-3xl font-serif text-[var(--color-primary)] mb-6"
+                        >
+                            El Bosque Viviente
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Árboles centenarios, palmeras majestuosas y
+                            heliconias vibrantes crean el dosel que nos protege.
+                            Nuestro jardín botánico natural incluye una vasta
+                            colección de <strong>plantas medicinales</strong> y frutales
+                            que podrás descubrir y oler.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-[var(--color-primary)] shadow-sm"
+                                >Árboles Gigantes</span
+                            >
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-[var(--color-primary)] shadow-sm"
+                                >Flores Exóticas</span
+                            >
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-[var(--color-primary)] shadow-sm"
+                                >Medicina Natural</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-1 bg-gradient-to-br from-[var(--color-primary)] to-green-800 rounded-3xl p-10 relative overflow-hidden text-white"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-10 font-serif text-9xl text-white font-bold pointer-events-none"
+                    >
+                        Fauna
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif mb-6">
+                            Fauna Amazónica
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            {
+                                animals.map((a) => (
+                                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
+                                        <div class="text-3xl mb-2">
+                                            {a.icon}
+                                        </div>
+                                        <div class="font-bold">{a.name}</div>
+                                        <div class="text-xs text-white/80">
+                                            {a.desc}
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Tours Section */}
+            <div class="max-w-5xl mx-auto">
+                <h2
+                    class="text-3xl font-serif text-[var(--color-primary)] text-center mb-12"
+                >
+                    Explorando la Jungla
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="space-y-4">
+                        <div
+                            class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-sm"
+                        >
+                            <FiMap />
+                        </div>
+                        <h4 class="font-bold text-lg">Tours de Día</h4>
+                        <p class="text-gray-600 text-sm">
+                            Avistamiento de delfines rosados y grises en el río,
+                            caminatas bajo la selva y observación de monos en su
+                            hábitat.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="w-16 h-16 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-sm"
+                        >
+                            <FiMoon />
+                        </div>
+                        <h4 class="font-bold text-lg">
+                            Expediciones Nocturnas
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            El bosque despierta de noche. Escucha la selva y
+                            busca caimanes, ranas y especies nocturnas bajo la
+                            luna.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="w-16 h-16 bg-green-50 text-green-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-sm"
+                        >
+                            <FiEye />
+                        </div>
+                        <h4 class="font-bold text-lg">
+                            Observación Respetuosa
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Garantizamos impacto mínimo. Nuestra prioridad es el
+                            bienestar animal y la conservación de su entorno
+                            natural.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </Section>
+
+        <GalleryCarousel
+            client:visible
+            title="Galería Silvestre"
+            subtitle="Encuentros cercanos con la naturaleza"
+            images={[]}
+        />
+    </div>
+</Layout>

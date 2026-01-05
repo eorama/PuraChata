@@ -435,11 +435,10 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                             <Button
                                 fullWidth
                                 size="lg"
-                                href="https://wa.me/51917057569?text=Hola,%20me%20interesa%20el%20Full%20Day%20Yarapa"
-                                target="_blank"
+                                href={safeBase + "reserva"}
                                 className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1"
                             >
-                                Reservar por WhatsApp
+                                Reservar Ahora
                             </Button>
 
                             <p class="text-xs text-gray-400 text-center mt-4">

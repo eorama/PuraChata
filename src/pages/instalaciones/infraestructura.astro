@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "@/components/ui/Section.astro";
+import { GalleryCarousel } from "@/components/ui/GalleryCarousel";
+import { FiHome, FiUsers, FiCloudRain, FiLayout } from "react-icons/fi";
+
+const highlights = [
+    {
+        icon: FiHome,
+        title: "Materiales Locales",
+        description:
+            "Edificaciones construidas con madera local, calaminas y hojas trenzadas, siguiendo técnicas ancestrales de la región.",
+    },
+    {
+        icon: FiUsers,
+        title: "Comunidad",
+        description:
+            "Construido por las comunidades de Ex Petroleros y San Lucas. Su sabiduría local fue vital para crear espacios auténticos y seguros.",
+    },
+    {
+        icon: FiCloudRain,
+        title: "Adaptación Climática",
+        description:
+            "Estructuras elevadas sobre pilotes para convivir con los ciclos naturales del río y garantizar ventilación constante.",
+    },
+    {
+        icon: FiLayout,
+        title: "Diseño Exclusivo",
+        description:
+            "Cabañas de doble altura y habitaciones diseñadas para maximizar la privacidad y la conexión visual con la laguna.",
+    },
+];
+---
+
+<Layout title="Infraestructura | Pura Chata">
+    <div class="pt-24 pb-20">
+        <Section container>
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <span
+                    class="text-[var(--color-primary)] font-bold tracking-wider uppercase text-sm"
+                    >Arquitectura Sostenible</span
+                >
+                <h1
+                    class="text-4xl md:text-5xl font-serif text-[var(--color-primary)] mt-3 mb-6"
+                >
+                    Armonía con el Entorno
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed font-light">
+                    En Purachata Ecolodge, la arquitectura no compite con la
+                    selva; se funde en ella. Cada viga y cada techo cuenta una
+                    historia de respeto por la naturaleza y colaboración
+                    comunitaria.
+                </p>
+                <div
+                    class="w-24 h-1 bg-[var(--color-primary)]/20 mx-auto rounded-full mt-8"
+                >
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                {
+                    highlights.map((item) => (
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-14 h-14 bg-[var(--color-background-soft)] rounded-xl flex items-center justify-center text-[var(--color-primary)] text-2xl mb-6">
+                                <item.icon />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 font-serif">
+                                {item.title}
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                {item.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+
+            {/* Detailed Sections */}
+            <div class="space-y-24">
+                {/* Construction Process */}
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h2
+                            class="text-3xl font-serif text-[var(--color-primary)]"
+                        >
+                            Construcción con Propósito
+                        </h2>
+                        <div class="prose prose-lg text-gray-700">
+                            <p>
+                                Priorizamos una construcción que respete el
+                                entorno amazónico. El lodge no es un elemento
+                                ajeno, sino una extensión del paisaje.
+                            </p>
+                            <p>
+                                Queremos expresar un <strong
+                                    >agradecimiento especial</strong
+                                > a las comunidades de Ex Petroleros y San Lucas.
+                                Su experiencia y conocimiento profundo del territorio
+                                han sido los cimientos sobre los que se levanta Pura
+                                Chata.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-200 rounded-3xl h-[400px] w-full overflow-hidden shadow-xl"
+                    >
+                        {/* Placeholder for real image */}
+                        <div
+                            class="w-full h-full bg-gray-300 flex items-center justify-center text-gray-500"
+                        >
+                            Imagen Construcción
+                        </div>
+                    </div>
+                </div>
+
+                {/* Accommodations Design */}
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div
+                        class="order-2 md:order-1 bg-gray-200 rounded-3xl h-[400px] w-full overflow-hidden shadow-xl"
+                    >
+                        {/* Placeholder for real image */}
+                        <div
+                            class="w-full h-full bg-gray-300 flex items-center justify-center text-gray-500"
+                        >
+                            Imagen Bungalows Elevados
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 space-y-6">
+                        <h2
+                            class="text-3xl font-serif text-[var(--color-primary)]"
+                        >
+                            Espacios para el Descanso
+                        </h2>
+                        <div class="prose prose-lg text-gray-700">
+                            <p>
+                                Contamos con tres <strong
+                                    >cabañas individuales de doble altura</strong
+                                >, dispuestas alrededor de la laguna para
+                                ofrecer silencio y privacidad absoluta.
+                            </p>
+                            <p>
+                                Además, nuestras áreas comunes, espacios de yoga
+                                y piscina están diseñados para complementar la
+                                experiencia: lugares donde el único ruido es el
+                                sonido del viento y las aves.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+
+        <GalleryCarousel
+            client:visible
+            title="Nuestros Espacios"
+            subtitle="Explore nuestra arquitectura integrada en la selva"
+            images={[]}
+        />
+    </div>
+</Layout>

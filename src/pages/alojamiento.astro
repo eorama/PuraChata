@@ -59,13 +59,14 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                     utilizando materiales locales y técnicas tradicionales que
                     garantizan frescura y ventilación natural.
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Cada espacio está pensado para ofrecer vistas privilegiadas
-                    de la selva, permitiéndote despertar con el canto de las
-                    aves y dormir bajo un manto de estrellas, todo ello sin
-                    renunciar al confort esencial para una estancia placentera e
-                    inolvidable.
-                </p>
+                <div class="pt-4">
+                    <Button
+                        href={safeBase + "instalaciones/infraestructura"}
+                        variant="outline"
+                    >
+                        Conoce nuestra Arquitectura Sostenible
+                    </Button>
+                </div>
             </div>
         </Section>
 
@@ -191,7 +192,7 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                 </div>
                 <div class="order-1 lg:order-2 space-y-6">
                     <h3 class="text-3xl font-serif text-[var(--color-primary)]">
-                        Exteriores y Relax
+                        Exteriores y Biodiversidad
                     </h3>
                     <p class="text-gray-700 leading-relaxed">
                         La experiencia Pura Chata se vive también fuera de la
@@ -202,8 +203,16 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                     <p class="text-gray-700 leading-relaxed">
                         Nuestra <strong>piscina natural</strong> y las zonas de hamacas
                         frente a la laguna son los lugares predilectos para leer un
-                        libro, meditar o simplemente contemplar el atardecer amazónico.
+                        libro, meditar o contemplar la vida silvestre que nos rodea.
                     </p>
+                    <div class="pt-2">
+                        <Button
+                            href={safeBase + "instalaciones/biodiversidad"}
+                            variant="secondary"
+                        >
+                            Descubre la Flora y Fauna
+                        </Button>
+                    </div>
                 </div>
             </div>
         </Section>
@@ -246,6 +255,14 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                             Opciones vegetarianas y veganas
                         </li>
                     </ul>
+                    <div class="pt-4">
+                        <Button
+                            href={safeBase + "instalaciones/gastronomia"}
+                            variant="primary"
+                        >
+                            Explora nuestra Gastronomía
+                        </Button>
+                    </div>
                 </div>
                 <div
                     class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl bg-gray-200"
@@ -284,8 +301,7 @@ const safeBase = import.meta.env.BASE_URL.endsWith("/")
                         <Button
                             size="lg"
                             className="bg-white text-[var(--color-primary)] hover:bg-gray-100 font-bold text-lg px-12 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
-                            href="https://purachatalodge.aloha.co/cottages?request-type=embed"
-                            target="_blank"
+                            href={safeBase + "reserva"}
                         >
                             Reserva tu Estadía Ahora
                         </Button>

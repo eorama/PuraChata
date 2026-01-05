@@ -1,5 +1,4 @@
 ---
-import { Button } from "@/components/ui/Button"; // Will verify this import works with .astro or needs .tsx
 // Actually Button should be imported from the new .astro file if possible, or support both.
 // Since I created Button.astro, I should import it.
 // Astro resolves exports.
@@ -117,8 +116,7 @@ const isCurrent = (href: string) => {
             </div>
 
             <a
-                href="https://wa.me/51917057569"
-                target="_blank"
+                href={`${safeBase}reserva`}
                 class="inline-flex items-center justify-center rounded-md font-bold text-sm h-9 px-4 bg-[var(--color-primary)] text-white hover:bg-opacity-90 transition-colors"
             >
                 Reservar Ahora
@@ -181,8 +179,7 @@ const isCurrent = (href: string) => {
         </div>
 
         <a
-            href="https://wa.me/51917057569"
-            target="_blank"
+            href={`${safeBase}reserva`}
             class="w-full inline-flex items-center justify-center rounded-md font-bold text-base h-11 px-8 bg-[var(--color-primary)] text-white hover:bg-opacity-90 transition-colors"
         >
             Reservar Ahora
