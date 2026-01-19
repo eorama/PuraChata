@@ -1,0 +1,76 @@
+---
+import { clsx } from "clsx";
+import Button from "@/components/ui/Button.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  reverse?: boolean;
+  ctaText?: string;
+  ctaLink?: string;
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  imageSrc,
+  imageAlt,
+  reverse = false,
+  ctaText,
+  ctaLink,
+  class: className,
+} = Astro.props;
+---
+
+<div
+  class={clsx(
+    "grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto py-12 md:py-20",
+    reverse ? "md:flex-row-reverse" : "",
+    className,
+  )}
+>
+  <div class={clsx("space-y-6", reverse ? "order-2 md:order-1" : "")}>
+    {
+      subtitle && (
+        <span class="text-[var(--color-accent)] font-bold tracking-wider uppercase text-sm block">
+          {subtitle}
+        </span>
+      )
+    }
+    <h3
+      class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] leading-tight"
+    >
+      {title}
+    </h3>
+    <div class="prose text-gray-700 leading-relaxed text-lg text-justify">
+      <p>{description}</p>
+    </div>
+    {
+      ctaText && ctaLink && (
+        <div class="pt-4">
+          <Button href={ctaLink} variant="outline">
+            {ctaText}
+          </Button>
+        </div>
+      )
+    }
+  </div>
+
+  <div
+    class={clsx(
+      "relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl",
+      reverse ? "order-1 md:order-2" : "",
+    )}
+  >
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+    />
+  </div>
+</div>

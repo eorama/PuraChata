@@ -1,0 +1,481 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "@/components/ui/Section.astro";
+import Button from "@/components/ui/Button.astro";
+import {
+  FiClock,
+  FiMapPin,
+  FiCheckCircle,
+  FiXCircle,
+  FiUsers,
+  FiArrowLeft,
+  FiSun,
+  FiDroplet,
+  FiCamera,
+} from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+const safeBase = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+---
+
+<Layout title="4D/3N Conexión con la Selva Viva | PuraChata Ecolodge">
+  <div class="pt-24 pb-20">
+    {/* Breadcrumb / Back */}
+    <div class="container mx-auto px-4 mb-8">
+      <a
+        href={`${safeBase}experiencias`}
+        class="inline-flex items-center gap-2 text-gray-500 hover:text-[var(--color-primary)] transition-colors"
+      >
+        <FiArrowLeft /> Volver a Experiencias
+      </a>
+    </div>
+
+    {/* Hero Section */}
+    <div class="container mx-auto px-4 mb-16">
+      <div
+        class="relative h-[50vh] min-h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl"
+      >
+        <img
+          src={safeBase + "images/card-rainforest.png"}
+          alt="Conexión Selva Viva"
+          class="object-cover w-full h-full"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16"
+        >
+          <span
+            class="text-[var(--color-accent)] font-bold tracking-wider uppercase text-sm md:text-base mb-2"
+          >
+            4 Días / 3 Noches
+          </span>
+          <h1
+            class="text-4xl md:text-6xl font-serif text-white font-bold leading-tight max-w-4xl"
+          >
+            Conexión con la Selva Viva
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    {/* Introduction Content */}
+    <Section container className="!py-0">
+      <div class="grid lg:grid-cols-3 gap-12">
+        {/* Main Content (Left, 2 cols) */}
+        <div class="lg:col-span-2 space-y-8">
+          <div
+            class="prose prose-lg text-gray-700 leading-relaxed text-justify"
+          >
+            <p>
+              Este no es un viaje para mirar la selva desde afuera, sino para
+              habitarla por unos días. En PuraChata la experiencia comienza al
+              llegar y continúa en cada caminata, en cada río navegado y en cada
+              noche bajo el sonido del bosque.
+            </p>
+            <p>
+              El programa combina exploración diurna y nocturna, navegación
+              tranquila, pesca tradicional, observación de fauna y momentos de
+              aprendizaje junto a guías locales. A lo largo de la estadía, la
+              selva se muestra en sus distintos ritmos: amaneceres con aves
+              nativas, atardeceres en el río y noches donde la vida se activa.
+            </p>
+            <p class="font-semibold text-[var(--color-primary)]">
+              Un recorrido pensado para quienes desean llevarse algo más que
+              fotos: la sensación real de haber conectado con la Amazonía.
+            </p>
+          </div>
+
+          {/* Itinerary */}
+          <div
+            class="mt-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-8"
+          >
+            <h2 class="text-3xl font-serif text-[var(--color-primary)] mb-2">
+              Itinerario del Tour
+            </h2>
+            <p
+              class="text-gray-500 mb-8 uppercase tracking-wide text-sm font-bold"
+            >
+              4 Días de Conexión Profunda
+            </p>
+
+            <div
+              class="relative border-l-2 border-[var(--color-primary)]/30 ml-3 space-y-8"
+            >
+              {/* Day 1 */}
+              <div class="relative pl-8">
+                <span
+                  class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-[var(--color-primary)] border-4 border-white shadow-sm flex items-center justify-center text-white text-xs font-bold"
+                  >1</span
+                >
+                <h4 class="font-bold text-gray-900 text-xl mb-4">
+                  Día 1: Bienvenida e Inmersión
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Traslado del hotel o aeropuerto (6 am - 10 am)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Llegada y recepción
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Conoce árboles frutales, plantas medicinales y cosecha frutos
+                    de temporada
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Almuerzo
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Taller: Tabaco - saberes ancestrales
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Pesca artesanal en nuestra laguna
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Cena
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Caminata nocturna y meditación
+                  </li>
+                </ul>
+              </div>
+
+              {/* Day 2 */}
+              <div class="relative pl-8">
+                <span
+                  class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-[var(--color-primary)] border-4 border-white shadow-sm flex items-center justify-center text-white text-xs font-bold"
+                  >2</span
+                >
+                <h4 class="font-bold text-gray-900 text-xl mb-4">
+                  Día 2: Expedición a Nauta
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Desayuno
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Traslado a Nauta (partida antes de las 8 am, 3 horas por vía terrestre
+                    y río)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Avistamiento de delfines y aves emblemáticas
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Almuerzo a bordo
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Caminata en búsqueda de osos perezosos, monos y aves nativas
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Puesta del sol
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Cena
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Caminata nocturna en búsqueda de tarántulas y variedad de ranas
+                  </li>
+                </ul>
+              </div>
+
+              {/* Day 3 */}
+              <div class="relative pl-8">
+                <span
+                  class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-[var(--color-primary)] border-4 border-white shadow-sm flex items-center justify-center text-white text-xs font-bold"
+                  >3</span
+                >
+                <h4 class="font-bold text-gray-900 text-xl mb-4">
+                  Día 3: Fauna y Pesca
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Vista del amanecer
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Desayuno
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Caminata en búsqueda de aves
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Pesca de pirañas
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Almuerzo a bordo
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Cena en el alojamiento
+                  </li>
+                </ul>
+              </div>
+
+              {/* Day 4 */}
+              <div class="relative pl-8">
+                <span
+                  class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-[var(--color-primary)] border-4 border-white shadow-sm flex items-center justify-center text-white text-xs font-bold"
+                  >4</span
+                >
+                <h4 class="font-bold text-gray-900 text-xl mb-4">
+                  Día 4: Despedida
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Desayuno
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Caminata por el sendero Purachata
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Visita al Centro de Rescate Amazónico (CREA)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Almuerzo amazónico
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <FiCheckCircle
+                      className="text-[var(--color-primary)] mt-1 flex-shrink-0"
+                    />
+                    Traslado aeropuerto/hotel
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Practical Info */}
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+            {/* Incluye */}
+            <div
+              class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+            >
+              <h3
+                class="font-bold text-xl text-[var(--color-primary)] mb-4 flex items-center gap-2"
+              >
+                <FiCheckCircle /> Incluye
+              </h3>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Traslado
+                  terrestre y fluvial
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Guía naturalista
+                  local
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Todas
+                  las comidas
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Alojamiento
+                  en bungalows
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Todas
+                  las actividades descritas
+                </li>
+              </ul>
+            </div>
+            {/* No Incluye */}
+            <div
+              class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+            >
+              <h3
+                class="font-bold text-xl text-red-500 mb-4 flex items-center gap-2"
+              >
+                <FiXCircle /> No Incluye
+              </h3>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div> Bebidas
+                  alcohólicas
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div> Propinas
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div> Recuerdos
+                  y gastos personales
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* What to bring */}
+          <div class="bg-[var(--color-secondary)]/30 p-8 rounded-2xl mt-8">
+            <h3
+              class="font-bold text-xl text-[var(--color-primary)] mb-6 flex items-center gap-2"
+            >
+              🎒 ¿Qué necesito llevar?
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <ul class="space-y-3 text-gray-700 text-sm">
+                <li class="flex items-center gap-2">
+                  <FiSun /> Gorra, sombrero y gafas de sol
+                </li>
+                <li class="flex items-center gap-2">
+                  <FiCheckCircle /> Protector solar & Repelente eco
+                </li>
+                <li class="flex items-center gap-2">
+                  <FiDroplet /> Chubasquero o poncho (impermeable)
+                </li>
+              </ul>
+              <ul class="space-y-3 text-gray-700 text-sm">
+                <li class="flex items-center gap-2">
+                  <span class="text-lg">💧</span> Cantimplora con agua
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-lg">👕</span> Ropa cómoda y ligera
+                </li>
+                <li class="flex items-center gap-2">
+                  <FiCamera /> Cámara, binoculares (opcional)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Sidebar / Sticky (Right) */}
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-8">
+            {/* Booking Card */}
+            <div
+              class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100"
+            >
+              <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">
+                Reserva tu Aventura
+              </h3>
+
+              <div class="space-y-4 mb-8">
+                <div
+                  class="flex justify-between items-center bg-gray-50 p-3 rounded-lg"
+                >
+                  <span class="text-gray-600 font-medium">4D/3N</span>
+                  <span class="text-[var(--color-primary)] font-bold text-xl"
+                    >Consultar</span
+                  >
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <Button
+                  fullWidth
+                  size="lg"
+                  href={safeBase + "reserva"}
+                  className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1"
+                >
+                  Reservar Ahora
+                </Button>
+
+                <a
+                  href="https://wa.me/51999999999?text=Hola,%20quiero%20información%20sobre%20el%20tour%20Conexión%20con%20la%20Selva%20Viva%204D/3N"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md bg-green-500 hover:bg-green-600 text-white font-bold transition-colors"
+                >
+                  <FaWhatsapp className="text-xl" />
+                  Consultar por WhatsApp
+                </a>
+              </div>
+
+              <p class="text-xs text-gray-400 text-center mt-4">
+                ¿Prefieres atención inmediata? Escríbenos por WhatsApp
+              </p>
+            </div>
+
+            {/* Additional Info Widget */}
+            <div class="bg-[var(--color-background-soft)] p-6 rounded-2xl">
+              <h4
+                class="font-bold text-[var(--color-primary)] mb-2 flex items-center gap-2"
+              >
+                <FiUsers /> Conexión Profunda
+              </h4>
+              <p class="text-sm text-gray-600">
+                Una experiencia inmersiva en la selva amazónica, con actividades
+                diurnas y nocturnas para conectar con la naturaleza en todos sus
+                ritmos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </div>
+</Layout>

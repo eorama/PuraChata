@@ -1,0 +1,80 @@
+---
+import { IoTimeOutline } from "react-icons/io5";
+import { FiArrowRight } from "react-icons/fi";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+
+interface Tour {
+  title: string;
+  duration: string;
+  image: string;
+  link: string;
+}
+
+const tours: Tour[] = [
+  {
+    title: "Amazonía Esencial",
+    duration: "3 Días / 2 Noches",
+    image: base + "images/tours-y-aventura.jpg",
+    link: `${base}experiencias/amazonia-esencial`,
+  },
+  {
+    title: "Conexión Selva Viva",
+    duration: "4 Días / 3 Noches",
+    image: base + "images/card-rainforest.png",
+    link: `${base}experiencias/conexion-selva-viva`,
+  },
+  {
+    title: "Camino Verde",
+    duration: "5 Días / 4 Noches",
+    image: base + "images/instalaciones-jungle-path.jpg",
+    link: `${base}experiencias/camino-verde`,
+  },
+  {
+    title: "Full Day Yarapa",
+    duration: "1 Día",
+    image: base + "images/card-dolphin.png",
+    link: `${base}experiencias/yarapa`,
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {
+    tours.map((tour) => (
+      <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-100">
+        <div class="relative h-48 md:h-56 overflow-hidden">
+          <img
+            src={tour.image}
+            alt={tour.title}
+            class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[var(--color-primary)] flex items-center gap-1 shadow-sm">
+            <IoTimeOutline />
+            {tour.duration}
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-xl font-bold text-[var(--color-primary)] mb-2 line-clamp-2 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+            {tour.title}
+          </h3>
+
+          <div class="mt-auto pt-4">
+            <a
+              href={tour.link}
+              class="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors group/link"
+            >
+              Ver Itinerario
+              <span class="transform group-hover/link:translate-x-1 transition-transform">
+                <FiArrowRight />
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -4,330 +4,487 @@ import Section from "@/components/ui/Section.astro";
 import Button from "@/components/ui/Button.astro";
 import { FiClock, FiMapPin, FiCheckCircle } from "react-icons/fi";
 const safeBase = import.meta.env.BASE_URL.endsWith("/")
-    ? import.meta.env.BASE_URL
-    : import.meta.env.BASE_URL + "/";
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
 ---
 
 <Layout title="Experiencias | PuraChata Ecolodge">
-    <div class="pt-24">
-        <Section container>
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                <h1
-                    class="text-4xl md:text-5xl mb-6 font-serif text-[var(--color-primary)]"
-                >
-                    Nuestras Experiencias
-                </h1>
-                <p class="text-xl text-gray-600">
-                    Descubre la magia de la Amazonía con itinerarios diseñados
-                    para conectar profundamente con la naturaleza y la cultura
-                    local.
-                </p>
+  <div class="pt-24">
+    <Section container>
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h1
+          class="text-4xl md:text-5xl mb-6 font-serif text-[var(--color-primary)]"
+        >
+          Nuestras Experiencias
+        </h1>
+        <p class="text-xl text-gray-600">
+          Descubre la magia de la Amazonía con itinerarios diseñados para
+          conectar profundamente con la naturaleza y la cultura local.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-24">
+        {/* Experience 1: Yarapa */}
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <a
+              href={`${safeBase}experiencias/yarapa`}
+              class="block relative h-full w-full"
+            >
+              <img
+                src={safeBase + "images/card-dolphin.png"}
+                alt="Delfines Rosados en Yarapa"
+                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> Río Yarapa & Amazonas
+            </div>
+            <a href={`${safeBase}experiencias/yarapa`}>
+              <h2
+                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
+              >
+                Full Day Yarapa: Santuario de Biodiversidad
+              </h2>
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              Navega por el corazón de la selva en una aventura única. Este
+              santuario es el hogar de los místicos delfines rosados y grises.
+              Disfruta de la conexión pura con ríos milenarios y fauna exótica.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Avistamiento
+                  de delfines rosados
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Navegación
+                  ríos Marañón y Ucayali
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Pesca
+                  de pirañas (opcional)
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Caminata
+                  de flora y fauna
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Almuerzo
+                  amazónico incluido
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiClock className="text-[var(--color-primary)] mt-1" /> 8:00 AM
+                  - 6:30 PM
+                </li>
+              </ul>
             </div>
 
-            <div class="flex flex-col gap-24">
-                {/* Experience 1: Yarapa */}
-                <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div
-                        class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
-                    >
-                        <a
-                            href={`${safeBase}experiencias/yarapa`}
-                            class="block relative h-full w-full"
-                        >
-                            <img
-                                src={safeBase + "images/card-dolphin.png"}
-                                alt="Delfines Rosados en Yarapa"
-                                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
-                            />
-                        </a>
-                    </div>
-                    <div class="lg:w-1/2 space-y-6">
-                        <div
-                            class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
-                        >
-                            <FiMapPin /> Río Yarapa & Amazonas
-                        </div>
-                        <a href={`${safeBase}experiencias/yarapa`}>
-                            <h2
-                                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
-                            >
-                                Full Day Yarapa: Santuario de Biodiversidad
-                            </h2>
-                        </a>
-                        <p class="text-gray-700 leading-relaxed">
-                            Navega por el corazón de la selva en una aventura
-                            única. Este santuario es el hogar de los místicos
-                            delfines rosados y grises. Disfruta de la conexión
-                            pura con ríos milenarios y fauna exótica.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <ul class="space-y-3">
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Avistamiento de delfines rosados
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Navegación ríos Marañón y Ucayali
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Pesca de pirañas (opcional)
-                                </li>
-                            </ul>
-                            <ul class="space-y-3">
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Caminata de flora y fauna
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Almuerzo amazónico incluido
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiClock
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> 8:00 AM - 6:30 PM
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
-                        >
-                            <div>
-                                <span
-                                    class="block text-xs text-gray-500 uppercase"
-                                    >Precio Adultos</span
-                                >
-                                <span
-                                    class="text-2xl font-bold text-[var(--color-primary)]"
-                                    >$150</span
-                                >
-                            </div>
-                            <div class="flex gap-3 flex-wrap">
-                                <a href={`${safeBase}experiencias/yarapa`}>
-                                    <Button variant="secondary">
-                                        Ver Itinerario
-                                    </Button>
-                                </a>
-                                <Button href={safeBase + "reserva"}>
-                                    Reservar
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Experience 2: Allpahuayo */}
-                <div
-                    class="flex flex-col lg:flex-row-reverse gap-12 items-center"
+            <div
+              class="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
+            >
+              <div>
+                <span class="block text-xs text-gray-500 uppercase"
+                  >Precio Adultos</span
                 >
-                    <div
-                        class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
-                    >
-                        <a
-                            href={`${safeBase}experiencias/allpahuayo`}
-                            class="block relative h-full w-full"
-                        >
-                            <img
-                                src={safeBase +
-                                    "images/experiencia-allpahuayo.jpg"}
-                                alt="Bosques de Arena Blanca"
-                                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
-                            />
-                        </a>
-                    </div>
-                    <div class="lg:w-1/2 space-y-6">
-                        <div
-                            class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
-                        >
-                            <FiMapPin /> Reserva Nacional Allpahuayo Mishana
-                        </div>
-                        <a href={`${safeBase}experiencias/allpahuayo`}>
-                            <h2
-                                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
-                            >
-                                Full Day Allpahuayo & CREA
-                            </h2>
-                        </a>
-                        <p class="text-gray-700 leading-relaxed">
-                            Explora los raros bosques de arena blanca
-                            (varillales) y conoce la "Ruta de la biodiversidad".
-                            Culmina el día visitando el Centro de Rescate
-                            Amazónico (CREA) para apoyar la conservación del
-                            manatí.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <ul class="space-y-3">
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Caminata en bosques varillales
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Vista de aves endémicas
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Visita al CREA (Manatíes)
-                                </li>
-                            </ul>
-                            <ul class="space-y-3">
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Conocer plantas medicinales
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiCheckCircle
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> Transporte y entradas incluidas
-                                </li>
-                                <li
-                                    class="flex items-start gap-2 text-sm text-gray-700"
-                                >
-                                    <FiClock
-                                        className="text-[var(--color-primary)] mt-1"
-                                    /> 7:30 AM - Retorno tarde
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
-                        >
-                            <div>
-                                <span
-                                    class="block text-xs text-gray-500 uppercase"
-                                    >Precio Adultos</span
-                                >
-                                <span
-                                    class="text-2xl font-bold text-[var(--color-primary)]"
-                                    >S/. 308</span
-                                >
-                            </div>
-                            <div class="flex gap-3 flex-wrap">
-                                <a href={`${safeBase}experiencias/allpahuayo`}>
-                                    <Button variant="secondary">
-                                        Ver Itinerario
-                                    </Button>
-                                </a>
-                                <Button href={safeBase + "reserva"}>
-                                    Reservar
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Experience 3: Estadia */}
-                <div
-                    class="flex flex-col lg:flex-row gap-12 items-center bg-[var(--color-background-soft)] p-8 md:p-12 rounded-3xl"
+                <span class="text-2xl font-bold text-[var(--color-primary)]"
+                  >$150</span
                 >
-                    <div
-                        class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
-                    >
-                        <img
-                            src={safeBase +
-                                "images/experiencia-estadia-swing.jpg"}
-                            alt="Bungalows PuraChata"
-                            class="object-cover w-full h-full"
-                        />
-                    </div>
-                    <div class="lg:w-1/2 space-y-6">
-                        <div
-                            class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
-                        >
-                            <FiMapPin /> PuraChata Ecolodge
-                        </div>
-                        <h2
-                            class="text-3xl md:text-4xl font-serif text-[var(--color-primary)]"
-                        >
-                            Programas de Estadía
-                        </h2>
-                        <p class="text-gray-700 leading-relaxed">
-                            Desconéctate del mundo y conecta contigo mismo.
-                            Nuestros paquetes de 3 días / 2 noches combinan el
-                            confort de nuestros bungalows con la inmersión total
-                            en las 14 hectáreas de bosque virgen de nuestra
-                            finca.
-                        </p>
-
-                        <ul class="space-y-3">
-                            <li
-                                class="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                                <FiCheckCircle
-                                    className="text-[var(--color-primary)] mt-1"
-                                /> Alojamiento en bungalows ecológicos
-                            </li>
-                            <li
-                                class="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                                <FiCheckCircle
-                                    className="text-[var(--color-primary)] mt-1"
-                                /> Acceso a piscina y áreas comunes
-                            </li>
-                            <li
-                                class="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                                <FiCheckCircle
-                                    className="text-[var(--color-primary)] mt-1"
-                                /> Gastronomía local (Desayuno, Almuerzo, Cena)
-                            </li>
-                            <li
-                                class="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                                <FiCheckCircle
-                                    className="text-[var(--color-primary)] mt-1"
-                                /> Caminatas nocturnas y avistamiento en la finca
-                            </li>
-                        </ul>
-
-                        <div class="pt-4">
-                            <Button
-                                variant="secondary"
-                                href={safeBase + "reserva"}
-                            >
-                                Consultar Paquetes
-                            </Button>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="flex gap-3 flex-wrap">
+                <a href={`${safeBase}experiencias/yarapa`}>
+                  <Button variant="secondary"> Ver Itinerario </Button>
+                </a>
+                <Button href={safeBase + "reserva"}> Reservar </Button>
+              </div>
             </div>
-        </Section>
-    </div>
+          </div>
+        </div>
+
+        {/* Experience 2: Allpahuayo */}
+        <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <a
+              href={`${safeBase}experiencias/allpahuayo`}
+              class="block relative h-full w-full"
+            >
+              <img
+                src={safeBase + "images/experiencia-allpahuayo.jpg"}
+                alt="Bosques de Arena Blanca"
+                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> Reserva Nacional Allpahuayo Mishana
+            </div>
+            <a href={`${safeBase}experiencias/allpahuayo`}>
+              <h2
+                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
+              >
+                Full Day Allpahuayo & CREA
+              </h2>
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              Explora los raros bosques de arena blanca (varillales) y conoce la
+              "Ruta de la biodiversidad". Culmina el día visitando el Centro de
+              Rescate Amazónico (CREA) para apoyar la conservación del manatí.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Caminata
+                  en bosques varillales
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Vista
+                  de aves endémicas
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Visita
+                  al CREA (Manatíes)
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Conocer
+                  plantas medicinales
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Transporte
+                  y entradas incluidas
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiClock className="text-[var(--color-primary)] mt-1" /> 7:30 AM
+                  - Retorno tarde
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
+            >
+              <div>
+                <span class="block text-xs text-gray-500 uppercase"
+                  >Precio Adultos</span
+                >
+                <span class="text-2xl font-bold text-[var(--color-primary)]"
+                  >S/. 308</span
+                >
+              </div>
+              <div class="flex gap-3 flex-wrap">
+                <a href={`${safeBase}experiencias/allpahuayo`}>
+                  <Button variant="secondary"> Ver Itinerario </Button>
+                </a>
+                <Button href={safeBase + "reserva"}> Reservar </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience 3: Amazonía Esencial 3D/2N */}
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <a
+              href={`${safeBase}experiencias/amazonia-esencial`}
+              class="block relative h-full w-full"
+            >
+              <img
+                src={safeBase + "images/tours-y-aventura.jpg"}
+                alt="Amazonía Esencial"
+                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> Río Amazonas & Selva
+            </div>
+            <a href={`${safeBase}experiencias/amazonia-esencial`}>
+              <h2
+                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
+              >
+                3D/2N Amazonía Esencial
+              </h2>
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              Vive una experiencia amazónica esencial con excursiones por el Río
+              Amazonas, avistamiento de delfines rosados, caminatas por la
+              selva, talleres de saberes ancestrales y visitas a centros de
+              conservación. Ideal para viajeros que buscan naturaleza, cultura y
+              aventura en pocos días.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Delfines
+                  rosados y grises
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Talleres
+                  ancestrales
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Observación
+                  de fauna
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Caminatas
+                  nocturnas
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Visita
+                  al CREA
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiClock className="text-[var(--color-primary)] mt-1" /> 3 días
+                  / 2 noches
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex gap-3 flex-wrap">
+              <a href={`${safeBase}experiencias/amazonia-esencial`}>
+                <Button variant="secondary"> Ver Itinerario </Button>
+              </a>
+              <Button href={safeBase + "reserva"}> Reservar </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience 4: Conexión Selva Viva 4D/3N */}
+        <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <a
+              href={`${safeBase}experiencias/conexion-selva-viva`}
+              class="block relative h-full w-full"
+            >
+              <img
+                src={safeBase + "images/card-rainforest.png"}
+                alt="Conexión Selva Viva"
+                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> Selva Profunda
+            </div>
+            <a href={`${safeBase}experiencias/conexion-selva-viva`}>
+              <h2
+                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
+              >
+                4D/3N Conexión con la Selva Viva
+              </h2>
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              Un viaje para habitar la selva. Explora caminatas diurnas y
+              nocturnas, navegación tranquila, pesca tradicional y observación
+              de fauna. Amaneceres con aves nativas, atardeceres en el río y
+              noches donde la vida se activa. Conexión real con la Amazonía.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Expedición
+                  a Nauta
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Caminatas
+                  diurnas y nocturnas
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Osos
+                  perezosos y monos
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Pesca
+                  de pirañas
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Amaneceres
+                  en el río
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiClock className="text-[var(--color-primary)] mt-1" /> 4 días
+                  / 3 noches
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex gap-3 flex-wrap">
+              <a href={`${safeBase}experiencias/conexion-selva-viva`}>
+                <Button variant="secondary"> Ver Itinerario </Button>
+              </a>
+              <Button href={safeBase + "reserva"}> Reservar </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience 5: Camino Verde 5D/4N */}
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <a
+              href={`${safeBase}experiencias/camino-verde`}
+              class="block relative h-full w-full"
+            >
+              <img
+                src={safeBase + "images/instalaciones-jungle-path.jpg"}
+                alt="Camino Verde"
+                class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> Ciudad a Selva Profunda
+            </div>
+            <a href={`${safeBase}experiencias/camino-verde`}>
+              <h2
+                class="text-3xl md:text-4xl font-serif text-[var(--color-primary)] hover:underline decoration-2 underline-offset-4"
+              >
+                5D/4N Camino Verde
+              </h2>
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              De la ciudad de Iquitos hacia la selva profunda. Explora mercados,
+              espacios históricos, senderos naturales, ríos amazónicos y saberes
+              ancestrales. Un programa completo de ecoturismo vivencial pensado
+              para quienes buscan una vivencia auténtica sin prisas.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> City
+                  tour de Iquitos
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Museo
+                  Ayapua
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Expedición
+                  a Nauta
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Saberes
+                  ancestrales
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Fauna
+                  amazónica
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <FiClock className="text-[var(--color-primary)] mt-1" /> 5 días
+                  / 4 noches
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex gap-3 flex-wrap">
+              <a href={`${safeBase}experiencias/camino-verde`}>
+                <Button variant="secondary"> Ver Itinerario </Button>
+              </a>
+              <Button href={safeBase + "reserva"}> Reservar </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience 6: Estadia */}
+        <div
+          class="flex flex-col lg:flex-row gap-12 items-center bg-[var(--color-background-soft)] p-8 md:p-12 rounded-3xl"
+        >
+          <div
+            class="lg:w-1/2 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl"
+          >
+            <img
+              src={safeBase + "images/experiencia-estadia-swing.jpg"}
+              alt="Bungalows PuraChata"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="flex items-center gap-2 text-[var(--color-primary)] font-bold uppercase text-sm tracking-wider"
+            >
+              <FiMapPin /> PuraChata Ecolodge
+            </div>
+            <h2
+              class="text-3xl md:text-4xl font-serif text-[var(--color-primary)]"
+            >
+              Programas de Estadía
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+              Desconéctate del mundo y conecta contigo mismo. Nuestros paquetes
+              de 3 días / 2 noches combinan el confort de nuestros bungalows con
+              la inmersión total en las 14 hectáreas de bosque virgen de nuestra
+              finca.
+            </p>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Alojamiento
+                en bungalows ecológicos
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Acceso
+                a piscina y áreas comunes
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Gastronomía
+                local (Desayuno, Almuerzo, Cena)
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <FiCheckCircle className="text-[var(--color-primary)] mt-1" /> Caminatas
+                nocturnas y avistamiento en la finca
+              </li>
+            </ul>
+
+            <div class="pt-4">
+              <Button variant="secondary" href={safeBase + "reserva"}>
+                Consultar Paquetes
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </div>
 </Layout>

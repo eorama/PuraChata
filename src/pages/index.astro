@@ -2,331 +2,249 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "@/components/ui/Button.astro";
 import Section from "@/components/ui/Section.astro";
-import { FiArrowRight } from "react-icons/fi";
-// HeroSlider is problematic if it uses Framer Motion without client:load.
-// Assuming we will need to refactor it or use it as a client island.
-// For now, let's use it as a client island.
 import { HeroSlider } from "@/components/home/HeroSlider";
+import ContentBlock from "@/components/home/ContentBlock.astro";
+import TourGrid from "@/components/home/TourGrid.astro";
+
 const base = import.meta.env.BASE_URL.endsWith("/")
-    ? import.meta.env.BASE_URL
-    : import.meta.env.BASE_URL + "/";
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
 ---
 
-<Layout title="PuraChata Ecolodge | Conexión Profunda en la Amazonía">
-    <div class="flex flex-col">
-        {/* Hero Section */}
-        <section
-            class="relative h-screen min-h-[600px] w-full flex items-center"
+<Layout title="PuraChata Ecolodge | Experiencias en la Amazonía Peruana">
+  <div class="flex flex-col">
+    {/* BLOQUE 1 – HERO PRINCIPAL */}
+    <section class="relative h-screen min-h-[600px] w-full flex items-center">
+      <div class="absolute inset-0 z-0">
+        <HeroSlider client:visible />
+      </div>
+
+      <div class="container mx-auto px-4 z-10 text-white pt-20">
+        <div class="max-w-4xl animate-fade-in-up text-center md:text-left">
+          <h1
+            class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 drop-shadow-2xl text-white"
+          >
+            Experiencias en la Amazonía peruana desde Iquitos
+          </h1>
+          <p
+            class="text-xl md:text-2xl mb-8 font-medium max-w-2xl drop-shadow-xl text-gray-100"
+          >
+            Alojamiento en la selva y tours responsables en Pacaya Samiria
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          >
+            <Button
+              size="lg"
+              className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white border-none shadow-xl transform hover:scale-105 transition-all"
+              href={`${base}experiencias`}
+            >
+              Ver tours
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="!border-white !text-white hover:!bg-white hover:!text-[var(--color-primary)] w-full sm:w-auto shadow-xl"
+              href={`${base}reserva`}
+            >
+              Reservar ahora
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* BLOQUE 2 – DESCRIPCIÓN PRINCIPAL */}
+    <Section className="bg-white pb-0">
+      <div class="max-w-4xl mx-auto text-center space-y-4 mb-8">
+        <h2
+          class="text-3xl md:text-5xl font-serif text-[var(--color-primary)] leading-tight"
         >
-            <div class="absolute inset-0 z-0">
-                <HeroSlider client:visible />
-            </div>
+          Experiencias auténticas en la Amazonía
+        </h2>
+        <div class="h-1 w-24 bg-[var(--color-accent)] mx-auto rounded-full">
+        </div>
+        <p class="text-xl text-gray-600 font-medium">
+          Turismo de naturaleza, conexión y propósito
+        </p>
+      </div>
+    </Section>
 
-            <div class="container mx-auto px-4 z-10 text-white pt-20">
-                <div
-                    class="max-w-4xl animate-fade-in-up text-center md:text-left"
-                >
-                    <h1
-                        class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-2xl text-white"
-                    >
-                        Pura Chata: Su Ecolodge Amazonía Peruana para una
-                        Conexión Profunda
-                    </h1>
-                    <p
-                        class="text-xl md:text-2xl mb-8 font-medium max-w-2xl drop-shadow-xl text-gray-100"
-                    >
-                        Vive una experiencia íntima, segura y transformadora en
-                        el corazón de la selva.
-                    </p>
-                    <div
-                        class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-                    >
-                        <Button
-                            size="lg"
-                            class="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white border-none shadow-xl transform hover:scale-105 transition-all"
-                            href={`${base}reserva`}
-                        >
-                            Reserva Ahora
-                        </Button>
-                        <a href={`${base}experiencias`}>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                class="!border-white !text-white hover:!bg-[var(--color-primary)] hover:!text-white hover:!border-[var(--color-primary)] w-full sm:w-auto shadow-xl"
-                            >
-                                Descubre Nuestras Experiencias
-                            </Button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    {/* 2.1 Ubicación y Entorno */}
+    <Section className="bg-white pt-0">
+      <ContentBlock
+        title="Ubicación y Entorno"
+        subtitle="El corazón de la selva"
+        description="Ubicados en plena Amazonía peruana, a lo largo de la carretera Iquitos–Nauta, ofrecemos alojamiento en la selva y experiencias diseñadas para descubrir la biodiversidad amazónica de forma accesible, auténtica y respetuosa con el entorno natural."
+        imageSrc={base + "images/home-bungalow-sunset.jpg"}
+        imageAlt="Entorno natural de Pura Chata Ecolodge"
+        reverse={false}
+      />
+    </Section>
 
-        {/* Intro SEO Optimized Section */}
-        <Section className="bg-white">
-            <div class="max-w-4xl mx-auto text-center space-y-8">
-                <span
-                    class="text-[var(--color-accent)] font-bold tracking-wider uppercase text-sm block"
-                >
-                    Bienvenido a Pura Chata
-                </span>
-                <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-serif text-[var(--color-primary)] leading-tight"
-                >
-                    Sumérgete en la profundidad de la selva amazónica
-                </h2>
-                <div
-                    class="prose prose-lg mx-auto text-gray-700 leading-relaxed text-justify"
-                >
-                    <p>
-                        Ubicado a tan solo una hora de Iquitos, en la región de
-                        Loreto, <strong
-                            >Pura Chata Ecolodge Amazonía Peruana</strong
-                        > ha sido creado con dedicación, sensibilidad y respeto hacia
-                        la naturaleza y las personas. Somos un espacio donde la sostenibilidad,
-                        el bienestar y la belleza natural se entrelazan con un propósito
-                        claro: ofrecerte un refugio auténtico lejos del ruido cotidiano.
-                    </p>
-                    <p>
-                        En nuestro <strong>Ecolodge Amazonía Peruana</strong>,
-                        cada rincón invita a la introspección, al descanso y a
-                        la conexión con lo esencial. Aquí, los árboles
-                        medicinales, el canto de las aves, el agua que fluye y
-                        el silencio que sana son los protagonistas de tu
-                        estancia. No somos solo un hotel; somos una experiencia
-                        de vida.
-                    </p>
-                </div>
-            </div>
-        </Section>
+    {/* 2.2 Experiencias y Tours */}
+    <Section className="bg-[var(--color-background-soft)]">
+      <ContentBlock
+        title="Experiencias y Tours"
+        subtitle="Aventura y Descubrimiento"
+        description="Diseñamos tours de varios días, full days y experiencias personalizadas, incluyendo expediciones en la Reserva Nacional Pacaya Samiria, navegación por ríos amazónicos, caminatas interpretativas, observación de fauna silvestre y contacto directo con la naturaleza."
+        imageSrc={base + "images/card-dolphin.png"}
+        imageAlt="Exploración en la selva amazónica"
+        reverse={true}
+        ctaText="Ver todas las experiencias"
+        ctaLink={base + "experiencias"}
+      />
+    </Section>
 
-        {/* Sostenibilidad & Agroecología (Detailed Text) */}
-        <Section className="bg-[var(--color-background-soft)]">
+    {/* 2.3 Valor Diferencial */}
+    <Section className="bg-white">
+      <ContentBlock
+        title="Valor Diferencial"
+        subtitle="Turismo Responsable"
+        description="Nuestro enfoque integra turismo responsable, conservación ambiental y apoyo a iniciativas sociales, colaborando con comunidades locales y promoviendo un impacto positivo en la región. Cada experiencia busca generar conciencia, respeto y conexión con la Amazonía."
+        imageSrc={base + "images/granito-de-arena.jpg"}
+        imageAlt="Interacción con la comunidad local"
+        reverse={false}
+        ctaText="Conoce nuestro impacto"
+        ctaLink={base + "impacto-social"}
+      />
+    </Section>
+
+    {/* BLOQUE 3 – TOURS DESTACADOS */}
+    <Section className="bg-[var(--color-background-soft)]">
+      <div class="text-center mb-12">
+        <span
+          class="text-[var(--color-accent)] font-bold tracking-wider uppercase text-sm block mb-2"
+        >
+          Aventura
+        </span>
+        <h2
+          class="text-4xl md:text-5xl font-serif text-[var(--color-primary)] mb-6"
+        >
+          Nuestros tours más solicitados
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Descubre la selva a tu ritmo con nuestras experiencias diseñadas para
+          conectar con la naturaleza.
+        </p>
+      </div>
+
+      <TourGrid />
+
+      <div class="text-center mt-12">
+        <a href={`${base}experiencias`}>
+          <Button size="lg" variant="outline">
+            Explorar todos los tours
+          </Button>
+        </a>
+      </div>
+    </Section>
+
+    {/* BLOQUE 4 – EXPERIENCIA Y CONFIANZA */}
+    <Section className="bg-white">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div
+          class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1"
+        >
+          <img
+            src={base + "images/nosotros-equipo.jpg"}
+            alt="Equipo y huéspedes en Pura Chata"
+            class="object-cover w-full h-full"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8"
+          >
+            <p class="text-white text-lg font-medium italic">
+              "Una experiencia que transforma la manera de ver el mundo."
+            </p>
+          </div>
+        </div>
+        <div class="space-y-8 order-1 md:order-2">
+          <h2
+            class="text-3xl md:text-5xl font-serif text-[var(--color-primary)] leading-tight"
+          >
+            Más que un viaje, una experiencia con propósito.
+          </h2>
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Cada visita contribuye al cuidado del entorno natural y al
+            desarrollo de proyectos sociales en la región amazónica.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4">
             <div
-                class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+              class="bg-[var(--color-background-soft)] p-6 rounded-xl text-center"
             >
-                <div
-                    class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-                >
-                    <img
-                        src={base + "images/home-bungalow-sunset.jpg"}
-                        alt="Bungalows Pura Chata Ecolodge"
-                        class="object-cover w-full h-full"
-                    />
-                </div>
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
-                        Compromiso con la Tierra y la Vida
-                    </h3>
-                    <div
-                        class="prose text-gray-700 leading-relaxed text-justify"
-                    >
-                        <p>
-                            Somos una explotación agroecológica comprometida con
-                            el cuidado del entorno. En las instalaciones de
-                            nuestro <strong>Ecolodge Amazonía Peruana</strong>,
-                            cultivamos nuestros propios alimentos utilizando
-                            compost natural y técnicas ancestrales que respetan
-                            el ciclo de la tierra.
-                        </p>
-                        <p>
-                            Promovemos activamente la reforestación con una
-                            amplia variedad de especies nativas y ornamentales,
-                            fomentando la biodiversidad como fuente de vida,
-                            medicina y equilibrio. Al hospedarte con nosotros,
-                            no solo disfrutas de la selva, sino que contribuyes
-                            directamente a su preservación.
-                        </p>
-                        <p>
-                            Nuestra finca privada de 14 hectáreas de bosque
-                            virgen es un santuario donde la vida silvestre
-                            florece protegida, ofreciendo avistamientos únicos
-                            de flora y fauna en su hábitat natural.
-                        </p>
-                    </div>
-                    <a href={`${base}impacto-social`}>
-                        <Button variant="secondary" class="mt-4">
-                            Conoce Nuestro Impacto
-                        </Button>
-                    </a>
-                </div>
+              <span
+                class="block text-4xl font-serif text-[var(--color-accent)] font-bold mb-2"
+                >+500</span
+              >
+              <span
+                class="text-sm text-gray-600 font-bold uppercase tracking-wide"
+                >Viajeros Felices</span
+              >
             </div>
-        </Section>
-
-        {/* Bienestar & Saberes (Detailed Text) */}
-        <Section className="bg-white">
             <div
-                class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto md:flex-row-reverse"
+              class="bg-[var(--color-background-soft)] p-6 rounded-xl text-center"
             >
-                <div class="order-2 md:order-1 space-y-6">
-                    <h3 class="text-3xl font-serif text-[var(--color-primary)]">
-                        Saberes Ancestrales y Comunidad
-                    </h3>
-                    <div
-                        class="prose text-gray-700 leading-relaxed text-justify"
-                    >
-                        <p>
-                            Creemos profundamente en una selva que educa y
-                            transforma. Por eso, en Pura Chata colaboramos
-                            estrechamente con las comunidades locales. En
-                            nuestra pequeña tienda de productos amazónicos,
-                            compartimos <strong>saberes ancestrales</strong> y elaboraciones
-                            naturales que nacen del bosque.
-                        </p>
-                        <p>
-                            Cada producto refleja una forma de vida respetuosa,
-                            consciente y conectada con la tierra. Además,
-                            nuestro compromiso social se extiende a las escuelas
-                            rurales cercanas, donde donamos materiales,
-                            brindamos apoyo docente y facilitamos talleres de
-                            educación ambiental para sembrar las semillas de un
-                            futuro sostenible.
-                        </p>
-                        <p>
-                            Este <strong>Ecolodge Amazonía Peruana</strong> es un
-                            símbolo de unión y empoderamiento femenino, liderado por
-                            mujeres que buscan contribuir al desarrollo económico
-                            sostenible de la población local.
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="order-1 md:order-2 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-                >
-                    <img
-                        src={base + "images/home-agroecology.jpg"}
-                        alt="Naturaleza en Ecolodge Amazonía Peruana"
-                        class="object-cover w-full h-full"
-                    />
-                </div>
+              <span
+                class="block text-4xl font-serif text-[var(--color-accent)] font-bold mb-2"
+                >100%</span
+              >
+              <span
+                class="text-sm text-gray-600 font-bold uppercase tracking-wide"
+                >Impacto Local</span
+              >
             </div>
-        </Section>
+          </div>
 
-        {/* Highlights / Experiencias Preview */}
-        <Section className="bg-[var(--color-background-soft)]">
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                <h2
-                    class="text-4xl md:text-5xl mb-6 text-[var(--color-primary)] font-serif"
-                >
-                    Experiencias Inolvidables
-                </h2>
-                <p class="text-gray-600 text-lg">
-                    Más que un viaje, Pura Chata es un espacio cuidado con amor
-                    donde la conexión con la naturaleza impulsa procesos de
-                    sanación y reencuentro.
-                </p>
-            </div>
+          <div class="pt-4">
+            <Button href={`${base}nosotros`} variant="secondary">
+              Conoce nuestra historia
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Card 1: Alojamiento */}
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src={base + "images/alojamiento-consciente-v2.jpg"}
-                            alt="Alojamiento Ecolodge Amazonía Peruana"
-                            class="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full"
-                        />
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors"
-                        >
-                            Alojamiento Consciente
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Bungalows diseñados para escuchar el sonido de la
-                            selva y descansar en armonía con el entorno.
-                        </p>
-                        <a
-                            href={`${base}alojamiento`}
-                            class="text-[var(--color-primary)] font-bold flex items-center gap-2 hover:translate-x-2 transition-transform"
-                        >
-                            Ver Instalaciones <FiArrowRight />
-                        </a>
-                    </div>
-                </div>
+    {/* BLOQUE 5 – LLAMADA FINAL A LA ACCIÓN */}
+    <section
+      class="relative py-32 flex items-center justify-center text-center text-white overflow-hidden"
+    >
+      {/* Background Image with Overlay */}
+      <div class="absolute inset-0 z-0">
+        <img
+          src={base + "images/home-bungalow-sunset.jpg"}
+          alt="Atardecer en la Amazonía"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/70 z-10"></div>
+      </div>
 
-                {/* Card 2: Tours */}
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src={base + "images/experiencia-allpahuayo.jpg"}
-                            alt="Bosques de Arena Blanca"
-                            class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
-                        />
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors"
-                        >
-                            Tours y Aventura
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Explora el río Amazonas, avista delfines rosados y
-                            camina por bosques de arena blanca.
-                        </p>
-                        <a
-                            href={`${base}experiencias`}
-                            class="text-[var(--color-primary)] font-bold flex items-center gap-2 hover:translate-x-2 transition-transform"
-                        >
-                            Ver Itinerarios <FiArrowRight />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Card 3: Voluntariado */}
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src={base + "images/card-dolphin.png"}
-                            alt="Delfines Rosados en Yarapa"
-                            class="object-cover transition-transform duration-500 hover:scale-105 w-full h-full"
-                        />
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors"
-                        >
-                            Voluntariado
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Únete a nuestro equipo y aporta tu energía para
-                            construir un mundo más sostenible.
-                        </p>
-                        <a
-                            href={`${base}voluntariado`}
-                            class="text-[var(--color-primary)] font-bold flex items-center gap-2 hover:translate-x-2 transition-transform"
-                        >
-                            Postular Ahora <FiArrowRight />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </Section>
-
-        {/* SEO Footer Text Section */}
-        <Section className="bg-white py-20 border-t border-gray-100">
-            <div class="max-w-5xl mx-auto text-center space-y-6">
-                <h2 class="text-3xl font-serif text-[var(--color-primary)]">
-                    Tu Refugio en la Amazonía
-                </h2>
-                <p class="text-gray-600 leading-relaxed text-lg">
-                    Pura Chata es un lugar para quienes buscan más que un viaje.
-                    Es un espacio cuidado con amor, donde la conexión con la
-                    naturaleza impulsa procesos de sanación, silencio,
-                    creatividad y reencuentro. Un lugar donde todo invita a
-                    respirar, sentir y reconectar.
-                </p>
-                <p class="text-[var(--color-primary)] font-bold text-xl pt-4">
-                    Te esperamos. La selva también.
-                </p>
-            </div>
-        </Section>
-    </div>
+      <div class="relative z-20 container mx-auto px-4 max-w-4xl space-y-8">
+        <h2
+          class="text-4xl md:text-6xl font-serif font-bold leading-tight drop-shadow-2xl text-white"
+        >
+          ¿Listo para descubrir la Amazonía de una forma auténtica y
+          responsable?
+        </h2>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+          <Button
+            size="lg"
+            className="bg-white hover:bg-gray-100 text-[var(--color-primary)] border-none shadow-2xl text-lg px-12 py-8 h-auto font-serif"
+            href={`${base}contacto`}
+          >
+            Consultar disponibilidad
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="!border-white !text-white hover:!bg-white/10 shadow-2xl text-lg px-12 py-8 h-auto"
+            href={`${base}reserva`}
+          >
+            Reservar ahora
+          </Button>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
